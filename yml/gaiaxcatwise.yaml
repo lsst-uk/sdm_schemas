@@ -1,0 +1,1864 @@
+---
+name: gaiaxcatwise
+"@id": "#gaiaxcatwise"
+description: gaia_source catwise_2020 matches from Edinburgh
+tables:
+- name: matches_source
+  "@id": "#matches_source"
+  description: matched table
+  columns:
+  - name: solution_id
+    "@id": "#matches_source.solution_id"
+    datatype: long
+    description: solution_id
+    mysql:datatype: BIGINT
+  - name: designation
+    "@id": "#matches_source.designation"
+    datatype: string
+    description: designation
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: source_id
+    "@id": "#matches_source.source_id"
+    datatype: long
+    description: source_id
+    mysql:datatype: BIGINT
+  - name: random_index
+    "@id": "#matches_source.random_index"
+    datatype: long
+    description: random_index
+    mysql:datatype: BIGINT
+  - name: ref_epoch
+    "@id": "#matches_source.ref_epoch"
+    datatype: float
+    description: ref_epoch
+    mysql:datatype: FLOAT
+  - name: ra
+    "@id": "#matches_source.ra"
+    datatype: double
+    description: ra
+    mysql:datatype: DOUBLE
+  - name: ra_error
+    "@id": "#matches_source.ra_error"
+    datatype: float
+    description: ra_error
+    mysql:datatype: FLOAT
+  - name: dec
+    "@id": "#matches_source.dec"
+    datatype: double
+    description: dec
+    mysql:datatype: DOUBLE
+  - name: dec_error
+    "@id": "#matches_source.dec_error"
+    datatype: float
+    description: dec_error
+    mysql:datatype: FLOAT
+  - name: parallax
+    "@id": "#matches_source.parallax"
+    datatype: double
+    description: parallax
+    mysql:datatype: DOUBLE
+  - name: parallax_error
+    "@id": "#matches_source.parallax_error"
+    datatype: float
+    description: parallax_error
+    mysql:datatype: FLOAT
+  - name: parallax_over_error
+    "@id": "#matches_source.parallax_over_error"
+    datatype: float
+    description: parallax_over_error
+    mysql:datatype: FLOAT
+  - name: pm
+    "@id": "#matches_source.pm"
+    datatype: float
+    description: pm
+    mysql:datatype: FLOAT
+  - name: pmra
+    "@id": "#matches_source.pmra"
+    datatype: double
+    description: pmra
+    mysql:datatype: DOUBLE
+  - name: pmra_error
+    "@id": "#matches_source.pmra_error"
+    datatype: float
+    description: pmra_error
+    mysql:datatype: FLOAT
+  - name: pmdec
+    "@id": "#matches_source.pmdec"
+    datatype: double
+    description: pmdec
+    mysql:datatype: DOUBLE
+  - name: pmdec_error
+    "@id": "#matches_source.pmdec_error"
+    datatype: float
+    description: pmdec_error
+    mysql:datatype: FLOAT
+  - name: ra_dec_corr
+    "@id": "#matches_source.ra_dec_corr"
+    datatype: float
+    description: ra_dec_corr
+    mysql:datatype: FLOAT
+  - name: ra_parallax_corr
+    "@id": "#matches_source.ra_parallax_corr"
+    datatype: float
+    description: ra_parallax_corr
+    mysql:datatype: FLOAT
+  - name: ra_pmra_corr
+    "@id": "#matches_source.ra_pmra_corr"
+    datatype: float
+    description: ra_pmra_corr
+    mysql:datatype: FLOAT
+  - name: ra_pmdec_corr
+    "@id": "#matches_source.ra_pmdec_corr"
+    datatype: float
+    description: ra_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: dec_parallax_corr
+    "@id": "#matches_source.dec_parallax_corr"
+    datatype: float
+    description: dec_parallax_corr
+    mysql:datatype: FLOAT
+  - name: dec_pmra_corr
+    "@id": "#matches_source.dec_pmra_corr"
+    datatype: float
+    description: dec_pmra_corr
+    mysql:datatype: FLOAT
+  - name: dec_pmdec_corr
+    "@id": "#matches_source.dec_pmdec_corr"
+    datatype: float
+    description: dec_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pmra_corr
+    "@id": "#matches_source.parallax_pmra_corr"
+    datatype: float
+    description: parallax_pmra_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pmdec_corr
+    "@id": "#matches_source.parallax_pmdec_corr"
+    datatype: float
+    description: parallax_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: pmra_pmdec_corr
+    "@id": "#matches_source.pmra_pmdec_corr"
+    datatype: float
+    description: pmra_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: astrometric_n_obs_al
+    "@id": "#matches_source.astrometric_n_obs_al"
+    datatype: short
+    description: astrometric_n_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_obs_ac
+    "@id": "#matches_source.astrometric_n_obs_ac"
+    datatype: short
+    description: astrometric_n_obs_ac
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_good_obs_al
+    "@id": "#matches_source.astrometric_n_good_obs_al"
+    datatype: short
+    description: astrometric_n_good_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_bad_obs_al
+    "@id": "#matches_source.astrometric_n_bad_obs_al"
+    datatype: short
+    description: astrometric_n_bad_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_gof_al
+    "@id": "#matches_source.astrometric_gof_al"
+    datatype: float
+    description: astrometric_gof_al
+    mysql:datatype: FLOAT
+  - name: astrometric_chi2_al
+    "@id": "#matches_source.astrometric_chi2_al"
+    datatype: float
+    description: astrometric_chi2_al
+    mysql:datatype: FLOAT
+  - name: astrometric_excess_noise
+    "@id": "#matches_source.astrometric_excess_noise"
+    datatype: float
+    description: astrometric_excess_noise
+    mysql:datatype: FLOAT
+  - name: astrometric_excess_noise_sig
+    "@id": "#matches_source.astrometric_excess_noise_sig"
+    datatype: float
+    description: astrometric_excess_noise_sig
+    mysql:datatype: FLOAT
+  - name: astrometric_params_solved
+    "@id": "#matches_source.astrometric_params_solved"
+    datatype: byte
+    description: astrometric_params_solved
+    mysql:datatype: TINYINT
+  - name: astrometric_primary_flag
+    "@id": "#matches_source.astrometric_primary_flag"
+    datatype: byte
+    description: astrometric_primary_flag
+    mysql:datatype: TINYINT
+  - name: nu_eff_used_in_astrometry
+    "@id": "#matches_source.nu_eff_used_in_astrometry"
+    datatype: float
+    description: nu_eff_used_in_astrometry
+    mysql:datatype: FLOAT
+  - name: pseudocolour
+    "@id": "#matches_source.pseudocolour"
+    datatype: float
+    description: pseudocolour
+    mysql:datatype: FLOAT
+  - name: pseudocolour_error
+    "@id": "#matches_source.pseudocolour_error"
+    datatype: float
+    description: pseudocolour_error
+    mysql:datatype: FLOAT
+  - name: ra_pseudocolour_corr
+    "@id": "#matches_source.ra_pseudocolour_corr"
+    datatype: float
+    description: ra_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: dec_pseudocolour_corr
+    "@id": "#matches_source.dec_pseudocolour_corr"
+    datatype: float
+    description: dec_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pseudocolour_corr
+    "@id": "#matches_source.parallax_pseudocolour_corr"
+    datatype: float
+    description: parallax_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: pmra_pseudocolour_corr
+    "@id": "#matches_source.pmra_pseudocolour_corr"
+    datatype: float
+    description: pmra_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: pmdec_pseudocolour_corr
+    "@id": "#matches_source.pmdec_pseudocolour_corr"
+    datatype: float
+    description: pmdec_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: astrometric_matched_transits
+    "@id": "#matches_source.astrometric_matched_transits"
+    datatype: short
+    description: astrometric_matched_transits
+    mysql:datatype: SMALLINT
+  - name: visibility_periods_used
+    "@id": "#matches_source.visibility_periods_used"
+    datatype: short
+    description: visibility_periods_used
+    mysql:datatype: SMALLINT
+  - name: astrometric_sigma5d_max
+    "@id": "#matches_source.astrometric_sigma5d_max"
+    datatype: float
+    description: astrometric_sigma5d_max
+    mysql:datatype: FLOAT
+  - name: matched_transits
+    "@id": "#matches_source.matched_transits"
+    datatype: short
+    description: matched_transits
+    mysql:datatype: SMALLINT
+  - name: new_matched_transits
+    "@id": "#matches_source.new_matched_transits"
+    datatype: short
+    description: new_matched_transits
+    mysql:datatype: SMALLINT
+  - name: matched_transits_removed
+    "@id": "#matches_source.matched_transits_removed"
+    datatype: short
+    description: matched_transits_removed
+    mysql:datatype: SMALLINT
+  - name: ipd_gof_harmonic_amplitude
+    "@id": "#matches_source.ipd_gof_harmonic_amplitude"
+    datatype: float
+    description: ipd_gof_harmonic_amplitude
+    mysql:datatype: FLOAT
+  - name: ipd_gof_harmonic_phase
+    "@id": "#matches_source.ipd_gof_harmonic_phase"
+    datatype: float
+    description: ipd_gof_harmonic_phase
+    mysql:datatype: FLOAT
+  - name: ipd_frac_multi_peak
+    "@id": "#matches_source.ipd_frac_multi_peak"
+    datatype: byte
+    description: ipd_frac_multi_peak
+    mysql:datatype: TINYINT
+  - name: ipd_frac_odd_win
+    "@id": "#matches_source.ipd_frac_odd_win"
+    datatype: byte
+    description: ipd_frac_odd_win
+    mysql:datatype: TINYINT
+  - name: ruwe
+    "@id": "#matches_source.ruwe"
+    datatype: float
+    description: ruwe
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k1
+    "@id": "#matches_source.scan_direction_strength_k1"
+    datatype: float
+    description: scan_direction_strength_k1
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k2
+    "@id": "#matches_source.scan_direction_strength_k2"
+    datatype: float
+    description: scan_direction_strength_k2
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k3
+    "@id": "#matches_source.scan_direction_strength_k3"
+    datatype: float
+    description: scan_direction_strength_k3
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k4
+    "@id": "#matches_source.scan_direction_strength_k4"
+    datatype: float
+    description: scan_direction_strength_k4
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k1
+    "@id": "#matches_source.scan_direction_mean_k1"
+    datatype: float
+    description: scan_direction_mean_k1
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k2
+    "@id": "#matches_source.scan_direction_mean_k2"
+    datatype: float
+    description: scan_direction_mean_k2
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k3
+    "@id": "#matches_source.scan_direction_mean_k3"
+    datatype: float
+    description: scan_direction_mean_k3
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k4
+    "@id": "#matches_source.scan_direction_mean_k4"
+    datatype: float
+    description: scan_direction_mean_k4
+    mysql:datatype: FLOAT
+  - name: duplicated_source
+    "@id": "#matches_source.duplicated_source"
+    datatype: byte
+    description: duplicated_source
+    mysql:datatype: TINYINT
+  - name: phot_g_n_obs
+    "@id": "#matches_source.phot_g_n_obs"
+    datatype: short
+    description: phot_g_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_g_mean_flux
+    "@id": "#matches_source.phot_g_mean_flux"
+    datatype: double
+    description: phot_g_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_g_mean_flux_error
+    "@id": "#matches_source.phot_g_mean_flux_error"
+    datatype: float
+    description: phot_g_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_g_mean_flux_over_error
+    "@id": "#matches_source.phot_g_mean_flux_over_error"
+    datatype: float
+    description: phot_g_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_g_mean_mag
+    "@id": "#matches_source.phot_g_mean_mag"
+    datatype: float
+    description: phot_g_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_bp_n_obs
+    "@id": "#matches_source.phot_bp_n_obs"
+    datatype: short
+    description: phot_bp_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_bp_mean_flux
+    "@id": "#matches_source.phot_bp_mean_flux"
+    datatype: double
+    description: phot_bp_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_bp_mean_flux_error
+    "@id": "#matches_source.phot_bp_mean_flux_error"
+    datatype: float
+    description: phot_bp_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_bp_mean_flux_over_error
+    "@id": "#matches_source.phot_bp_mean_flux_over_error"
+    datatype: float
+    description: phot_bp_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_bp_mean_mag
+    "@id": "#matches_source.phot_bp_mean_mag"
+    datatype: float
+    description: phot_bp_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_rp_n_obs
+    "@id": "#matches_source.phot_rp_n_obs"
+    datatype: short
+    description: phot_rp_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_rp_mean_flux
+    "@id": "#matches_source.phot_rp_mean_flux"
+    datatype: double
+    description: phot_rp_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_rp_mean_flux_error
+    "@id": "#matches_source.phot_rp_mean_flux_error"
+    datatype: float
+    description: phot_rp_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_rp_mean_flux_over_error
+    "@id": "#matches_source.phot_rp_mean_flux_over_error"
+    datatype: float
+    description: phot_rp_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_rp_mean_mag
+    "@id": "#matches_source.phot_rp_mean_mag"
+    datatype: float
+    description: phot_rp_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_bp_rp_excess_factor
+    "@id": "#matches_source.phot_bp_rp_excess_factor"
+    datatype: float
+    description: phot_bp_rp_excess_factor
+    mysql:datatype: FLOAT
+  - name: phot_bp_n_contaminated_transits
+    "@id": "#matches_source.phot_bp_n_contaminated_transits"
+    datatype: short
+    description: phot_bp_n_contaminated_transits
+    mysql:datatype: SMALLINT
+  - name: phot_bp_n_blended_transits
+    "@id": "#matches_source.phot_bp_n_blended_transits"
+    datatype: short
+    description: phot_bp_n_blended_transits
+    mysql:datatype: SMALLINT
+  - name: phot_rp_n_contaminated_transits
+    "@id": "#matches_source.phot_rp_n_contaminated_transits"
+    datatype: short
+    description: phot_rp_n_contaminated_transits
+    mysql:datatype: SMALLINT
+  - name: phot_rp_n_blended_transits
+    "@id": "#matches_source.phot_rp_n_blended_transits"
+    datatype: short
+    description: phot_rp_n_blended_transits
+    mysql:datatype: SMALLINT
+  - name: phot_proc_mode
+    "@id": "#matches_source.phot_proc_mode"
+    datatype: byte
+    description: phot_proc_mode
+    mysql:datatype: TINYINT
+  - name: bp_rp
+    "@id": "#matches_source.bp_rp"
+    datatype: float
+    description: bp_rp
+    mysql:datatype: FLOAT
+  - name: bp_g
+    "@id": "#matches_source.bp_g"
+    datatype: float
+    description: bp_g
+    mysql:datatype: FLOAT
+  - name: g_rp
+    "@id": "#matches_source.g_rp"
+    datatype: float
+    description: g_rp
+    mysql:datatype: FLOAT
+  - name: radial_velocity
+    "@id": "#matches_source.radial_velocity"
+    datatype: float
+    description: radial_velocity
+    mysql:datatype: FLOAT
+  - name: radial_velocity_error
+    "@id": "#matches_source.radial_velocity_error"
+    datatype: float
+    description: radial_velocity_error
+    mysql:datatype: FLOAT
+  - name: rv_method_used
+    "@id": "#matches_source.rv_method_used"
+    datatype: byte
+    description: rv_method_used
+    mysql:datatype: TINYINT
+  - name: rv_nb_transits
+    "@id": "#matches_source.rv_nb_transits"
+    datatype: short
+    description: rv_nb_transits
+    mysql:datatype: SMALLINT
+  - name: rv_nb_deblended_transits
+    "@id": "#matches_source.rv_nb_deblended_transits"
+    datatype: short
+    description: rv_nb_deblended_transits
+    mysql:datatype: SMALLINT
+  - name: rv_visibility_periods_used
+    "@id": "#matches_source.rv_visibility_periods_used"
+    datatype: short
+    description: rv_visibility_periods_used
+    mysql:datatype: SMALLINT
+  - name: rv_expected_sig_to_noise
+    "@id": "#matches_source.rv_expected_sig_to_noise"
+    datatype: float
+    description: rv_expected_sig_to_noise
+    mysql:datatype: FLOAT
+  - name: rv_renormalised_gof
+    "@id": "#matches_source.rv_renormalised_gof"
+    datatype: float
+    description: rv_renormalised_gof
+    mysql:datatype: FLOAT
+  - name: rv_chisq_pvalue
+    "@id": "#matches_source.rv_chisq_pvalue"
+    datatype: float
+    description: rv_chisq_pvalue
+    mysql:datatype: FLOAT
+  - name: rv_time_duration
+    "@id": "#matches_source.rv_time_duration"
+    datatype: float
+    description: rv_time_duration
+    mysql:datatype: FLOAT
+  - name: rv_amplitude_robust
+    "@id": "#matches_source.rv_amplitude_robust"
+    datatype: float
+    description: rv_amplitude_robust
+    mysql:datatype: FLOAT
+  - name: rv_template_teff
+    "@id": "#matches_source.rv_template_teff"
+    datatype: float
+    description: rv_template_teff
+    mysql:datatype: FLOAT
+  - name: rv_template_logg
+    "@id": "#matches_source.rv_template_logg"
+    datatype: float
+    description: rv_template_logg
+    mysql:datatype: FLOAT
+  - name: rv_template_fe_h
+    "@id": "#matches_source.rv_template_fe_h"
+    datatype: float
+    description: rv_template_fe_h
+    mysql:datatype: FLOAT
+  - name: rv_atm_param_origin
+    "@id": "#matches_source.rv_atm_param_origin"
+    datatype: short
+    description: rv_atm_param_origin
+    mysql:datatype: SMALLINT
+  - name: vbroad
+    "@id": "#matches_source.vbroad"
+    datatype: float
+    description: vbroad
+    mysql:datatype: FLOAT
+  - name: vbroad_error
+    "@id": "#matches_source.vbroad_error"
+    datatype: float
+    description: vbroad_error
+    mysql:datatype: FLOAT
+  - name: vbroad_nb_transits
+    "@id": "#matches_source.vbroad_nb_transits"
+    datatype: short
+    description: vbroad_nb_transits
+    mysql:datatype: SMALLINT
+  - name: grvs_mag
+    "@id": "#matches_source.grvs_mag"
+    datatype: float
+    description: grvs_mag
+    mysql:datatype: FLOAT
+  - name: grvs_mag_error
+    "@id": "#matches_source.grvs_mag_error"
+    datatype: float
+    description: grvs_mag_error
+    mysql:datatype: FLOAT
+  - name: grvs_mag_nb_transits
+    "@id": "#matches_source.grvs_mag_nb_transits"
+    datatype: short
+    description: grvs_mag_nb_transits
+    mysql:datatype: SMALLINT
+  - name: rvs_spec_sig_to_noise
+    "@id": "#matches_source.rvs_spec_sig_to_noise"
+    datatype: float
+    description: rvs_spec_sig_to_noise
+    mysql:datatype: FLOAT
+  - name: phot_variable_flag
+    "@id": "#matches_source.phot_variable_flag"
+    datatype: string
+    description: phot_variable_flag
+    length: 16
+    mysql:datatype: VARCHAR(16)
+  - name: l
+    "@id": "#matches_source.l"
+    datatype: double
+    description: l
+    mysql:datatype: DOUBLE
+  - name: b
+    "@id": "#matches_source.b"
+    datatype: double
+    description: b
+    mysql:datatype: DOUBLE
+  - name: ecl_lon
+    "@id": "#matches_source.ecl_lon"
+    datatype: double
+    description: ecl_lon
+    mysql:datatype: DOUBLE
+  - name: ecl_lat
+    "@id": "#matches_source.ecl_lat"
+    datatype: double
+    description: ecl_lat
+    mysql:datatype: DOUBLE
+  - name: in_qso_candidates
+    "@id": "#matches_source.in_qso_candidates"
+    datatype: byte
+    description: in_qso_candidates
+    mysql:datatype: TINYINT
+  - name: in_galaxy_candidates
+    "@id": "#matches_source.in_galaxy_candidates"
+    datatype: byte
+    description: in_galaxy_candidates
+    mysql:datatype: TINYINT
+  - name: non_single_star
+    "@id": "#matches_source.non_single_star"
+    datatype: short
+    description: non_single_star
+    mysql:datatype: SMALLINT
+  - name: has_xp_continuous
+    "@id": "#matches_source.has_xp_continuous"
+    datatype: byte
+    description: has_xp_continuous
+    mysql:datatype: TINYINT
+  - name: has_xp_sampled
+    "@id": "#matches_source.has_xp_sampled"
+    datatype: byte
+    description: has_xp_sampled
+    mysql:datatype: TINYINT
+  - name: has_rvs
+    "@id": "#matches_source.has_rvs"
+    datatype: byte
+    description: has_rvs
+    mysql:datatype: TINYINT
+  - name: has_epoch_photometry
+    "@id": "#matches_source.has_epoch_photometry"
+    datatype: byte
+    description: has_epoch_photometry
+    mysql:datatype: TINYINT
+  - name: has_epoch_rv
+    "@id": "#matches_source.has_epoch_rv"
+    datatype: byte
+    description: has_epoch_rv
+    mysql:datatype: TINYINT
+  - name: has_mcmc_gspphot
+    "@id": "#matches_source.has_mcmc_gspphot"
+    datatype: byte
+    description: has_mcmc_gspphot
+    mysql:datatype: TINYINT
+  - name: has_mcmc_msc
+    "@id": "#matches_source.has_mcmc_msc"
+    datatype: byte
+    description: has_mcmc_msc
+    mysql:datatype: TINYINT
+  - name: in_andromeda_survey
+    "@id": "#matches_source.in_andromeda_survey"
+    datatype: byte
+    description: in_andromeda_survey
+    mysql:datatype: TINYINT
+  - name: classprob_dsc_combmod_quasar
+    "@id": "#matches_source.classprob_dsc_combmod_quasar"
+    datatype: float
+    description: classprob_dsc_combmod_quasar
+    mysql:datatype: FLOAT
+  - name: classprob_dsc_combmod_galaxy
+    "@id": "#matches_source.classprob_dsc_combmod_galaxy"
+    datatype: float
+    description: classprob_dsc_combmod_galaxy
+    mysql:datatype: FLOAT
+  - name: classprob_dsc_combmod_star
+    "@id": "#matches_source.classprob_dsc_combmod_star"
+    datatype: float
+    description: classprob_dsc_combmod_star
+    mysql:datatype: FLOAT
+  - name: teff_gspphot
+    "@id": "#matches_source.teff_gspphot"
+    datatype: float
+    description: teff_gspphot
+    mysql:datatype: FLOAT
+  - name: teff_gspphot_lower
+    "@id": "#matches_source.teff_gspphot_lower"
+    datatype: float
+    description: teff_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: teff_gspphot_upper
+    "@id": "#matches_source.teff_gspphot_upper"
+    datatype: float
+    description: teff_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: logg_gspphot
+    "@id": "#matches_source.logg_gspphot"
+    datatype: float
+    description: logg_gspphot
+    mysql:datatype: FLOAT
+  - name: logg_gspphot_lower
+    "@id": "#matches_source.logg_gspphot_lower"
+    datatype: float
+    description: logg_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: logg_gspphot_upper
+    "@id": "#matches_source.logg_gspphot_upper"
+    datatype: float
+    description: logg_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: mh_gspphot
+    "@id": "#matches_source.mh_gspphot"
+    datatype: float
+    description: mh_gspphot
+    mysql:datatype: FLOAT
+  - name: mh_gspphot_lower
+    "@id": "#matches_source.mh_gspphot_lower"
+    datatype: float
+    description: mh_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: mh_gspphot_upper
+    "@id": "#matches_source.mh_gspphot_upper"
+    datatype: float
+    description: mh_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: distance_gspphot
+    "@id": "#matches_source.distance_gspphot"
+    datatype: float
+    description: distance_gspphot
+    mysql:datatype: FLOAT
+  - name: distance_gspphot_lower
+    "@id": "#matches_source.distance_gspphot_lower"
+    datatype: float
+    description: distance_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: distance_gspphot_upper
+    "@id": "#matches_source.distance_gspphot_upper"
+    datatype: float
+    description: distance_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: azero_gspphot
+    "@id": "#matches_source.azero_gspphot"
+    datatype: float
+    description: azero_gspphot
+    mysql:datatype: FLOAT
+  - name: azero_gspphot_lower
+    "@id": "#matches_source.azero_gspphot_lower"
+    datatype: float
+    description: azero_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: azero_gspphot_upper
+    "@id": "#matches_source.azero_gspphot_upper"
+    datatype: float
+    description: azero_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: ag_gspphot
+    "@id": "#matches_source.ag_gspphot"
+    datatype: float
+    description: ag_gspphot
+    mysql:datatype: FLOAT
+  - name: ag_gspphot_lower
+    "@id": "#matches_source.ag_gspphot_lower"
+    datatype: float
+    description: ag_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: ag_gspphot_upper
+    "@id": "#matches_source.ag_gspphot_upper"
+    datatype: float
+    description: ag_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot
+    "@id": "#matches_source.ebpminrp_gspphot"
+    datatype: float
+    description: ebpminrp_gspphot
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot_lower
+    "@id": "#matches_source.ebpminrp_gspphot_lower"
+    datatype: float
+    description: ebpminrp_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot_upper
+    "@id": "#matches_source.ebpminrp_gspphot_upper"
+    datatype: float
+    description: ebpminrp_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: libname_gspphot
+    "@id": "#matches_source.libname_gspphot"
+    datatype: string
+    description: libname_gspphot
+    length: 16
+    mysql:datatype: VARCHAR(16)
+  - name: source_name
+    "@id": "#matches_source.source_name"
+    datatype: string
+    description: source_name
+    length: 21
+    mysql:datatype: VARCHAR(21)
+  - name: sourceid
+    "@id": "#matches_source.sourceid"
+    datatype: string
+    description: sourceid
+    length: 25
+    mysql:datatype: VARCHAR(25)
+  - name: raC
+    "@id": "#matches_source.raC"
+    datatype: double
+    description: raC
+    mysql:datatype: DOUBLE
+  - name: decC
+    "@id": "#matches_source.decC"
+    datatype: double
+    description: decC
+    mysql:datatype: DOUBLE
+  - name: sigra
+    "@id": "#matches_source.sigra"
+    datatype: float
+    description: sigra
+    mysql:datatype: FLOAT
+  - name: sigdec
+    "@id": "#matches_source.sigdec"
+    datatype: float
+    description: sigdec
+    mysql:datatype: FLOAT
+  - name: sigradec
+    "@id": "#matches_source.sigradec"
+    datatype: float
+    description: sigradec
+    mysql:datatype: FLOAT
+  - name: wx
+    "@id": "#matches_source.wx"
+    datatype: float
+    description: wx
+    mysql:datatype: FLOAT
+  - name: wy
+    "@id": "#matches_source.wy"
+    datatype: float
+    description: wy
+    mysql:datatype: FLOAT
+  - name: w1sky
+    "@id": "#matches_source.w1sky"
+    datatype: float
+    description: w1sky
+    mysql:datatype: FLOAT
+  - name: w1sigsk
+    "@id": "#matches_source.w1sigsk"
+    datatype: float
+    description: w1sigsk
+    mysql:datatype: FLOAT
+  - name: w1conf
+    "@id": "#matches_source.w1conf"
+    datatype: float
+    description: w1conf
+    mysql:datatype: FLOAT
+  - name: w2sky
+    "@id": "#matches_source.w2sky"
+    datatype: float
+    description: w2sky
+    mysql:datatype: FLOAT
+  - name: w2sigsk
+    "@id": "#matches_source.w2sigsk"
+    datatype: float
+    description: w2sigsk
+    mysql:datatype: FLOAT
+  - name: w2conf
+    "@id": "#matches_source.w2conf"
+    datatype: float
+    description: w2conf
+    mysql:datatype: FLOAT
+  - name: w1fitr
+    "@id": "#matches_source.w1fitr"
+    datatype: float
+    description: w1fitr
+    mysql:datatype: FLOAT
+  - name: w2fitr
+    "@id": "#matches_source.w2fitr"
+    datatype: float
+    description: w2fitr
+    mysql:datatype: FLOAT
+  - name: w1snr
+    "@id": "#matches_source.w1snr"
+    datatype: float
+    description: w1snr
+    mysql:datatype: FLOAT
+  - name: w2snr
+    "@id": "#matches_source.w2snr"
+    datatype: float
+    description: w2snr
+    mysql:datatype: FLOAT
+  - name: w1flux
+    "@id": "#matches_source.w1flux"
+    datatype: float
+    description: w1flux
+    mysql:datatype: FLOAT
+  - name: w1sigflux
+    "@id": "#matches_source.w1sigflux"
+    datatype: float
+    description: w1sigflux
+    mysql:datatype: FLOAT
+  - name: w2flux
+    "@id": "#matches_source.w2flux"
+    datatype: float
+    description: w2flux
+    mysql:datatype: FLOAT
+  - name: w2sigflux
+    "@id": "#matches_source.w2sigflux"
+    datatype: float
+    description: w2sigflux
+    mysql:datatype: FLOAT
+  - name: w1mpro
+    "@id": "#matches_source.w1mpro"
+    datatype: float
+    description: w1mpro
+    mysql:datatype: FLOAT
+  - name: w1sigmpro
+    "@id": "#matches_source.w1sigmpro"
+    datatype: float
+    description: w1sigmpro
+    mysql:datatype: FLOAT
+  - name: w1rchi2
+    "@id": "#matches_source.w1rchi2"
+    datatype: float
+    description: w1rchi2
+    mysql:datatype: FLOAT
+  - name: w2mpro
+    "@id": "#matches_source.w2mpro"
+    datatype: float
+    description: w2mpro
+    mysql:datatype: FLOAT
+  - name: w2sigmpro
+    "@id": "#matches_source.w2sigmpro"
+    datatype: float
+    description: w2sigmpro
+    mysql:datatype: FLOAT
+  - name: w2rchi2
+    "@id": "#matches_source.w2rchi2"
+    datatype: float
+    description: w2rchi2
+    mysql:datatype: FLOAT
+  - name: rchi2
+    "@id": "#matches_source.rchi2"
+    datatype: float
+    description: rchi2
+    mysql:datatype: FLOAT
+  - name: nb
+    "@id": "#matches_source.nb"
+    datatype: int
+    description: nb
+    mysql:datatype: INT
+  - name: na
+    "@id": "#matches_source.na"
+    datatype: int
+    description: na
+    mysql:datatype: INT
+  - name: w1Sat
+    "@id": "#matches_source.w1Sat"
+    datatype: float
+    description: w1Sat
+    mysql:datatype: FLOAT
+  - name: w2Sat
+    "@id": "#matches_source.w2Sat"
+    datatype: float
+    description: w2Sat
+    mysql:datatype: FLOAT
+  - name: w1mag
+    "@id": "#matches_source.w1mag"
+    datatype: float
+    description: w1mag
+    mysql:datatype: FLOAT
+  - name: w1sigm
+    "@id": "#matches_source.w1sigm"
+    datatype: float
+    description: w1sigm
+    mysql:datatype: FLOAT
+  - name: w1flg
+    "@id": "#matches_source.w1flg"
+    datatype: int
+    description: w1flg
+    mysql:datatype: INT
+  - name: w1Cov
+    "@id": "#matches_source.w1Cov"
+    datatype: float
+    description: w1Cov
+    mysql:datatype: FLOAT
+  - name: w2mag
+    "@id": "#matches_source.w2mag"
+    datatype: float
+    description: w2mag
+    mysql:datatype: FLOAT
+  - name: w2sigm
+    "@id": "#matches_source.w2sigm"
+    datatype: float
+    description: w2sigm
+    mysql:datatype: FLOAT
+  - name: w2flg
+    "@id": "#matches_source.w2flg"
+    datatype: int
+    description: w2flg
+    mysql:datatype: INT
+  - name: w2Cov
+    "@id": "#matches_source.w2Cov"
+    datatype: float
+    description: w2Cov
+    mysql:datatype: FLOAT
+  - name: w1mag_1
+    "@id": "#matches_source.w1mag_1"
+    datatype: float
+    description: w1mag_1
+    mysql:datatype: FLOAT
+  - name: w1sigm_1
+    "@id": "#matches_source.w1sigm_1"
+    datatype: float
+    description: w1sigm_1
+    mysql:datatype: FLOAT
+  - name: w1flg_1
+    "@id": "#matches_source.w1flg_1"
+    datatype: int
+    description: w1flg_1
+    mysql:datatype: INT
+  - name: w2mag_1
+    "@id": "#matches_source.w2mag_1"
+    datatype: float
+    description: w2mag_1
+    mysql:datatype: FLOAT
+  - name: w2sigm_1
+    "@id": "#matches_source.w2sigm_1"
+    datatype: float
+    description: w2sigm_1
+    mysql:datatype: FLOAT
+  - name: w2flg_1
+    "@id": "#matches_source.w2flg_1"
+    datatype: int
+    description: w2flg_1
+    mysql:datatype: INT
+  - name: w1mag_2
+    "@id": "#matches_source.w1mag_2"
+    datatype: float
+    description: w1mag_2
+    mysql:datatype: FLOAT
+  - name: w1sigm_2
+    "@id": "#matches_source.w1sigm_2"
+    datatype: float
+    description: w1sigm_2
+    mysql:datatype: FLOAT
+  - name: w1flg_2
+    "@id": "#matches_source.w1flg_2"
+    datatype: int
+    description: w1flg_2
+    mysql:datatype: INT
+  - name: w2mag_2
+    "@id": "#matches_source.w2mag_2"
+    datatype: float
+    description: w2mag_2
+    mysql:datatype: FLOAT
+  - name: w2sigm_2
+    "@id": "#matches_source.w2sigm_2"
+    datatype: float
+    description: w2sigm_2
+    mysql:datatype: FLOAT
+  - name: w2flg_2
+    "@id": "#matches_source.w2flg_2"
+    datatype: int
+    description: w2flg_2
+    mysql:datatype: INT
+  - name: w1mag_3
+    "@id": "#matches_source.w1mag_3"
+    datatype: float
+    description: w1mag_3
+    mysql:datatype: FLOAT
+  - name: w1sigm_3
+    "@id": "#matches_source.w1sigm_3"
+    datatype: float
+    description: w1sigm_3
+    mysql:datatype: FLOAT
+  - name: w1flg_3
+    "@id": "#matches_source.w1flg_3"
+    datatype: int
+    description: w1flg_3
+    mysql:datatype: INT
+  - name: w2mag_3
+    "@id": "#matches_source.w2mag_3"
+    datatype: float
+    description: w2mag_3
+    mysql:datatype: FLOAT
+  - name: w2sigm_3
+    "@id": "#matches_source.w2sigm_3"
+    datatype: float
+    description: w2sigm_3
+    mysql:datatype: FLOAT
+  - name: w2flg_3
+    "@id": "#matches_source.w2flg_3"
+    datatype: int
+    description: w2flg_3
+    mysql:datatype: INT
+  - name: w1mag_4
+    "@id": "#matches_source.w1mag_4"
+    datatype: float
+    description: w1mag_4
+    mysql:datatype: FLOAT
+  - name: w1sigm_4
+    "@id": "#matches_source.w1sigm_4"
+    datatype: float
+    description: w1sigm_4
+    mysql:datatype: FLOAT
+  - name: w1flg_4
+    "@id": "#matches_source.w1flg_4"
+    datatype: int
+    description: w1flg_4
+    mysql:datatype: INT
+  - name: w2mag_4
+    "@id": "#matches_source.w2mag_4"
+    datatype: float
+    description: w2mag_4
+    mysql:datatype: FLOAT
+  - name: w2sigm_4
+    "@id": "#matches_source.w2sigm_4"
+    datatype: float
+    description: w2sigm_4
+    mysql:datatype: FLOAT
+  - name: w2flg_4
+    "@id": "#matches_source.w2flg_4"
+    datatype: int
+    description: w2flg_4
+    mysql:datatype: INT
+  - name: w1mag_5
+    "@id": "#matches_source.w1mag_5"
+    datatype: float
+    description: w1mag_5
+    mysql:datatype: FLOAT
+  - name: w1sigm_5
+    "@id": "#matches_source.w1sigm_5"
+    datatype: float
+    description: w1sigm_5
+    mysql:datatype: FLOAT
+  - name: w1flg_5
+    "@id": "#matches_source.w1flg_5"
+    datatype: int
+    description: w1flg_5
+    mysql:datatype: INT
+  - name: w2mag_5
+    "@id": "#matches_source.w2mag_5"
+    datatype: float
+    description: w2mag_5
+    mysql:datatype: FLOAT
+  - name: w2sigm_5
+    "@id": "#matches_source.w2sigm_5"
+    datatype: float
+    description: w2sigm_5
+    mysql:datatype: FLOAT
+  - name: w2flg_5
+    "@id": "#matches_source.w2flg_5"
+    datatype: int
+    description: w2flg_5
+    mysql:datatype: INT
+  - name: w1mag_6
+    "@id": "#matches_source.w1mag_6"
+    datatype: float
+    description: w1mag_6
+    mysql:datatype: FLOAT
+  - name: w1sigm_6
+    "@id": "#matches_source.w1sigm_6"
+    datatype: float
+    description: w1sigm_6
+    mysql:datatype: FLOAT
+  - name: w1flg_6
+    "@id": "#matches_source.w1flg_6"
+    datatype: int
+    description: w1flg_6
+    mysql:datatype: INT
+  - name: w2mag_6
+    "@id": "#matches_source.w2mag_6"
+    datatype: float
+    description: w2mag_6
+    mysql:datatype: FLOAT
+  - name: w2sigm_6
+    "@id": "#matches_source.w2sigm_6"
+    datatype: float
+    description: w2sigm_6
+    mysql:datatype: FLOAT
+  - name: w2flg_6
+    "@id": "#matches_source.w2flg_6"
+    datatype: int
+    description: w2flg_6
+    mysql:datatype: INT
+  - name: w1mag_7
+    "@id": "#matches_source.w1mag_7"
+    datatype: float
+    description: w1mag_7
+    mysql:datatype: FLOAT
+  - name: w1sigm_7
+    "@id": "#matches_source.w1sigm_7"
+    datatype: float
+    description: w1sigm_7
+    mysql:datatype: FLOAT
+  - name: w1flg_7
+    "@id": "#matches_source.w1flg_7"
+    datatype: int
+    description: w1flg_7
+    mysql:datatype: INT
+  - name: w2mag_7
+    "@id": "#matches_source.w2mag_7"
+    datatype: float
+    description: w2mag_7
+    mysql:datatype: FLOAT
+  - name: w2sigm_7
+    "@id": "#matches_source.w2sigm_7"
+    datatype: float
+    description: w2sigm_7
+    mysql:datatype: FLOAT
+  - name: w2flg_7
+    "@id": "#matches_source.w2flg_7"
+    datatype: int
+    description: w2flg_7
+    mysql:datatype: INT
+  - name: w1mag_8
+    "@id": "#matches_source.w1mag_8"
+    datatype: float
+    description: w1mag_8
+    mysql:datatype: FLOAT
+  - name: w1sigm_8
+    "@id": "#matches_source.w1sigm_8"
+    datatype: float
+    description: w1sigm_8
+    mysql:datatype: FLOAT
+  - name: w1flg_8
+    "@id": "#matches_source.w1flg_8"
+    datatype: int
+    description: w1flg_8
+    mysql:datatype: INT
+  - name: w2mag_8
+    "@id": "#matches_source.w2mag_8"
+    datatype: float
+    description: w2mag_8
+    mysql:datatype: FLOAT
+  - name: w2sigm_8
+    "@id": "#matches_source.w2sigm_8"
+    datatype: float
+    description: w2sigm_8
+    mysql:datatype: FLOAT
+  - name: w2flg_8
+    "@id": "#matches_source.w2flg_8"
+    datatype: int
+    description: w2flg_8
+    mysql:datatype: INT
+  - name: w1NM
+    "@id": "#matches_source.w1NM"
+    datatype: int
+    description: w1NM
+    mysql:datatype: INT
+  - name: w1M
+    "@id": "#matches_source.w1M"
+    datatype: int
+    description: w1M
+    mysql:datatype: INT
+  - name: w1magP
+    "@id": "#matches_source.w1magP"
+    datatype: float
+    description: w1magP
+    mysql:datatype: FLOAT
+  - name: w1sigP1
+    "@id": "#matches_source.w1sigP1"
+    datatype: float
+    description: w1sigP1
+    mysql:datatype: FLOAT
+  - name: w1sigP2
+    "@id": "#matches_source.w1sigP2"
+    datatype: float
+    description: w1sigP2
+    mysql:datatype: FLOAT
+  - name: w1k
+    "@id": "#matches_source.w1k"
+    datatype: float
+    description: w1k
+    mysql:datatype: FLOAT
+  - name: w1Ndf
+    "@id": "#matches_source.w1Ndf"
+    datatype: int
+    description: w1Ndf
+    mysql:datatype: INT
+  - name: w1mLQ
+    "@id": "#matches_source.w1mLQ"
+    datatype: float
+    description: w1mLQ
+    mysql:datatype: FLOAT
+  - name: w1mJDmin
+    "@id": "#matches_source.w1mJDmin"
+    datatype: double
+    description: w1mJDmin
+    mysql:datatype: DOUBLE
+  - name: w1mJDmax
+    "@id": "#matches_source.w1mJDmax"
+    datatype: double
+    description: w1mJDmax
+    mysql:datatype: DOUBLE
+  - name: w1mJDmea
+    "@id": "#matches_source.w1mJDmea"
+    datatype: double
+    description: w1mJDmea
+    mysql:datatype: DOUBLE
+  - name: w2NM
+    "@id": "#matches_source.w2NM"
+    datatype: int
+    description: w2NM
+    mysql:datatype: INT
+  - name: w2M
+    "@id": "#matches_source.w2M"
+    datatype: int
+    description: w2M
+    mysql:datatype: INT
+  - name: w2magP
+    "@id": "#matches_source.w2magP"
+    datatype: float
+    description: w2magP
+    mysql:datatype: FLOAT
+  - name: w2sigP1
+    "@id": "#matches_source.w2sigP1"
+    datatype: float
+    description: w2sigP1
+    mysql:datatype: FLOAT
+  - name: w2sigP2
+    "@id": "#matches_source.w2sigP2"
+    datatype: float
+    description: w2sigP2
+    mysql:datatype: FLOAT
+  - name: w2k
+    "@id": "#matches_source.w2k"
+    datatype: float
+    description: w2k
+    mysql:datatype: FLOAT
+  - name: w2Ndf
+    "@id": "#matches_source.w2Ndf"
+    datatype: int
+    description: w2Ndf
+    mysql:datatype: INT
+  - name: w2mLQ
+    "@id": "#matches_source.w2mLQ"
+    datatype: float
+    description: w2mLQ
+    mysql:datatype: FLOAT
+  - name: w2mJDmin
+    "@id": "#matches_source.w2mJDmin"
+    datatype: double
+    description: w2mJDmin
+    mysql:datatype: DOUBLE
+  - name: w2mJDmax
+    "@id": "#matches_source.w2mJDmax"
+    datatype: double
+    description: w2mJDmax
+    mysql:datatype: DOUBLE
+  - name: w2mJDmean
+    "@id": "#matches_source.w2mJDmean"
+    datatype: double
+    description: w2mJDmean
+    mysql:datatype: DOUBLE
+  - name: rho12
+    "@id": "#matches_source.rho12"
+    datatype: int
+    description: rho12
+    mysql:datatype: INT
+  - name: q12
+    "@id": "#matches_source.q12"
+    datatype: int
+    description: q12
+    mysql:datatype: INT
+  - name: nIters
+    "@id": "#matches_source.nIters"
+    datatype: int
+    description: nIters
+    mysql:datatype: INT
+  - name: nSteps
+    "@id": "#matches_source.nSteps"
+    datatype: int
+    description: nSteps
+    mysql:datatype: INT
+  - name: mdetID
+    "@id": "#matches_source.mdetID"
+    datatype: int
+    description: mdetID
+    mysql:datatype: INT
+  - name: p1
+    "@id": "#matches_source.p1"
+    datatype: float
+    description: p1
+    mysql:datatype: FLOAT
+  - name: p2
+    "@id": "#matches_source.p2"
+    datatype: float
+    description: p2
+    mysql:datatype: FLOAT
+  - name: MeanObsMJD
+    "@id": "#matches_source.MeanObsMJD"
+    datatype: double
+    description: MeanObsMJD
+    mysql:datatype: DOUBLE
+  - name: ra_pm
+    "@id": "#matches_source.ra_pm"
+    datatype: double
+    description: ra_pm
+    mysql:datatype: DOUBLE
+  - name: dec_pm
+    "@id": "#matches_source.dec_pm"
+    datatype: double
+    description: dec_pm
+    mysql:datatype: DOUBLE
+  - name: sigra_pm
+    "@id": "#matches_source.sigra_pm"
+    datatype: float
+    description: sigra_pm
+    mysql:datatype: FLOAT
+  - name: sigdec_pm
+    "@id": "#matches_source.sigdec_pm"
+    datatype: float
+    description: sigdec_pm
+    mysql:datatype: FLOAT
+  - name: sigradec_pm
+    "@id": "#matches_source.sigradec_pm"
+    datatype: float
+    description: sigradec_pm
+    mysql:datatype: FLOAT
+  - name: PMRAC
+    "@id": "#matches_source.PMRAC"
+    datatype: float
+    description: PMRAC
+    mysql:datatype: FLOAT
+  - name: PMDecC
+    "@id": "#matches_source.PMDecC"
+    datatype: float
+    description: PMDecC
+    mysql:datatype: FLOAT
+  - name: sigPMRA
+    "@id": "#matches_source.sigPMRA"
+    datatype: float
+    description: sigPMRA
+    mysql:datatype: FLOAT
+  - name: sigPMDec
+    "@id": "#matches_source.sigPMDec"
+    datatype: float
+    description: sigPMDec
+    mysql:datatype: FLOAT
+  - name: w1snr_pm
+    "@id": "#matches_source.w1snr_pm"
+    datatype: float
+    description: w1snr_pm
+    mysql:datatype: FLOAT
+  - name: w2snr_pm
+    "@id": "#matches_source.w2snr_pm"
+    datatype: float
+    description: w2snr_pm
+    mysql:datatype: FLOAT
+  - name: w1flux_pm
+    "@id": "#matches_source.w1flux_pm"
+    datatype: float
+    description: w1flux_pm
+    mysql:datatype: FLOAT
+  - name: w1sigflux_pm
+    "@id": "#matches_source.w1sigflux_pm"
+    datatype: float
+    description: w1sigflux_pm
+    mysql:datatype: FLOAT
+  - name: w2flux_pm
+    "@id": "#matches_source.w2flux_pm"
+    datatype: float
+    description: w2flux_pm
+    mysql:datatype: FLOAT
+  - name: w2sigflux_pm
+    "@id": "#matches_source.w2sigflux_pm"
+    datatype: float
+    description: w2sigflux_pm
+    mysql:datatype: FLOAT
+  - name: w1mpro_pm
+    "@id": "#matches_source.w1mpro_pm"
+    datatype: float
+    description: w1mpro_pm
+    mysql:datatype: FLOAT
+  - name: w1sigmpro_pm
+    "@id": "#matches_source.w1sigmpro_pm"
+    datatype: float
+    description: w1sigmpro_pm
+    mysql:datatype: FLOAT
+  - name: w1rchi2_pm
+    "@id": "#matches_source.w1rchi2_pm"
+    datatype: float
+    description: w1rchi2_pm
+    mysql:datatype: FLOAT
+  - name: w2mpro_pm
+    "@id": "#matches_source.w2mpro_pm"
+    datatype: float
+    description: w2mpro_pm
+    mysql:datatype: FLOAT
+  - name: w2sigmpro_pm
+    "@id": "#matches_source.w2sigmpro_pm"
+    datatype: float
+    description: w2sigmpro_pm
+    mysql:datatype: FLOAT
+  - name: w2rchi2_pm
+    "@id": "#matches_source.w2rchi2_pm"
+    datatype: float
+    description: w2rchi2_pm
+    mysql:datatype: FLOAT
+  - name: rchi2_pm
+    "@id": "#matches_source.rchi2_pm"
+    datatype: float
+    description: rchi2_pm
+    mysql:datatype: FLOAT
+  - name: pmcode
+    "@id": "#matches_source.pmcode"
+    datatype: string
+    description: pmcode
+    length: 5
+    mysql:datatype: VARCHAR(5)
+  - name: nIters_pm
+    "@id": "#matches_source.nIters_pm"
+    datatype: int
+    description: nIters_pm
+    mysql:datatype: INT
+  - name: nSteps_pm
+    "@id": "#matches_source.nSteps_pm"
+    datatype: int
+    description: nSteps_pm
+    mysql:datatype: INT
+  - name: dist
+    "@id": "#matches_source.dist"
+    datatype: float
+    description: dist
+    mysql:datatype: FLOAT
+  - name: dw1mag
+    "@id": "#matches_source.dw1mag"
+    datatype: float
+    description: dw1mag
+    mysql:datatype: FLOAT
+  - name: rch2w1
+    "@id": "#matches_source.rch2w1"
+    datatype: float
+    description: rch2w1
+    mysql:datatype: FLOAT
+  - name: dw2mag
+    "@id": "#matches_source.dw2mag"
+    datatype: float
+    description: dw2mag
+    mysql:datatype: FLOAT
+  - name: rch2w2
+    "@id": "#matches_source.rch2w2"
+    datatype: float
+    description: rch2w2
+    mysql:datatype: FLOAT
+  - name: elon_avg
+    "@id": "#matches_source.elon_avg"
+    datatype: double
+    description: elon_avg
+    mysql:datatype: DOUBLE
+  - name: elonSig
+    "@id": "#matches_source.elonSig"
+    datatype: float
+    description: elonSig
+    mysql:datatype: FLOAT
+  - name: elat_avg
+    "@id": "#matches_source.elat_avg"
+    datatype: double
+    description: elat_avg
+    mysql:datatype: DOUBLE
+  - name: elatSig
+    "@id": "#matches_source.elatSig"
+    datatype: float
+    description: elatSig
+    mysql:datatype: FLOAT
+  - name: Delon
+    "@id": "#matches_source.Delon"
+    datatype: float
+    description: Delon
+    mysql:datatype: FLOAT
+  - name: DelonSig
+    "@id": "#matches_source.DelonSig"
+    datatype: float
+    description: DelonSig
+    mysql:datatype: FLOAT
+  - name: Delat
+    "@id": "#matches_source.Delat"
+    datatype: float
+    description: Delat
+    mysql:datatype: FLOAT
+  - name: DelatSig
+    "@id": "#matches_source.DelatSig"
+    datatype: float
+    description: DelatSig
+    mysql:datatype: FLOAT
+  - name: DelonSNR
+    "@id": "#matches_source.DelonSNR"
+    datatype: float
+    description: DelonSNR
+    mysql:datatype: FLOAT
+  - name: DelatSNR
+    "@id": "#matches_source.DelatSNR"
+    datatype: float
+    description: DelatSNR
+    mysql:datatype: FLOAT
+  - name: chi2pmra
+    "@id": "#matches_source.chi2pmra"
+    datatype: float
+    description: chi2pmra
+    mysql:datatype: FLOAT
+  - name: chi2pmdec
+    "@id": "#matches_source.chi2pmdec"
+    datatype: float
+    description: chi2pmdec
+    mysql:datatype: FLOAT
+  - name: ka
+    "@id": "#matches_source.ka"
+    datatype: int
+    description: ka
+    mysql:datatype: INT
+  - name: k1
+    "@id": "#matches_source.k1"
+    datatype: int
+    description: k1
+    mysql:datatype: INT
+  - name: k2
+    "@id": "#matches_source.k2"
+    datatype: int
+    description: k2
+    mysql:datatype: INT
+  - name: km
+    "@id": "#matches_source.km"
+    datatype: int
+    description: km
+    mysql:datatype: INT
+  - name: par_pm
+    "@id": "#matches_source.par_pm"
+    datatype: float
+    description: par_pm
+    mysql:datatype: FLOAT
+  - name: par_pmSig
+    "@id": "#matches_source.par_pmSig"
+    datatype: float
+    description: par_pmSig
+    mysql:datatype: FLOAT
+  - name: par_stat
+    "@id": "#matches_source.par_stat"
+    datatype: float
+    description: par_stat
+    mysql:datatype: FLOAT
+  - name: par_sigma
+    "@id": "#matches_source.par_sigma"
+    datatype: float
+    description: par_sigma
+    mysql:datatype: FLOAT
+  - name: dist_x
+    "@id": "#matches_source.dist_x"
+    datatype: float
+    description: dist_x
+    mysql:datatype: FLOAT
+  - name: cc_flags
+    "@id": "#matches_source.cc_flags"
+    datatype: string
+    description: cc_flags
+    length: 16
+    mysql:datatype: VARCHAR(16)
+  - name: w1cc_map
+    "@id": "#matches_source.w1cc_map"
+    datatype: int
+    description: w1cc_map
+    mysql:datatype: INT
+  - name: w1cc_map_str
+    "@id": "#matches_source.w1cc_map_str"
+    datatype: string
+    description: w1cc_map_str
+    length: 20
+    mysql:datatype: VARCHAR(20)
+  - name: w2cc_map
+    "@id": "#matches_source.w2cc_map"
+    datatype: int
+    description: w2cc_map
+    mysql:datatype: INT
+  - name: w2cc_map_str
+    "@id": "#matches_source.w2cc_map_str"
+    datatype: string
+    description: w2cc_map_str
+    length: 20
+    mysql:datatype: VARCHAR(20)
+  - name: n_aw
+    "@id": "#matches_source.n_aw"
+    datatype: int
+    description: n_aw
+    mysql:datatype: INT
+  - name: ab_flags
+    "@id": "#matches_source.ab_flags"
+    datatype: string
+    description: ab_flags
+    length: 9
+    mysql:datatype: VARCHAR(9)
+  - name: w1ab_map
+    "@id": "#matches_source.w1ab_map"
+    datatype: int
+    description: w1ab_map
+    mysql:datatype: INT
+  - name: w1ab_map_str
+    "@id": "#matches_source.w1ab_map_str"
+    datatype: string
+    description: w1ab_map_str
+    length: 13
+    mysql:datatype: VARCHAR(13)
+  - name: w2ab_map
+    "@id": "#matches_source.w2ab_map"
+    datatype: int
+    description: w2ab_map
+    mysql:datatype: INT
+  - name: w2ab_map_str
+    "@id": "#matches_source.w2ab_map_str"
+    datatype: string
+    description: w2ab_map_str
+    length: 13
+    mysql:datatype: VARCHAR(13)
+  - name: glon
+    "@id": "#matches_source.glon"
+    datatype: double
+    description: glon
+    mysql:datatype: DOUBLE
+  - name: glat
+    "@id": "#matches_source.glat"
+    datatype: double
+    description: glat
+    mysql:datatype: DOUBLE
+  - name: elon
+    "@id": "#matches_source.elon"
+    datatype: double
+    description: elon
+    mysql:datatype: DOUBLE
+  - name: elat
+    "@id": "#matches_source.elat"
+    datatype: double
+    description: elat
+    mysql:datatype: DOUBLE
+  - name: unwise_objid
+    "@id": "#matches_source.unwise_objid"
+    datatype: string
+    description: unwise_objid
+    length: 20
+    mysql:datatype: VARCHAR(20)
+  - name: cxC
+    "@id": "#matches_source.cxC"
+    datatype: double
+    description: cxC
+    mysql:datatype: DOUBLE
+  - name: cyC
+    "@id": "#matches_source.cyC"
+    datatype: double
+    description: cyC
+    mysql:datatype: DOUBLE
+  - name: czC
+    "@id": "#matches_source.czC"
+    datatype: double
+    description: czC
+    mysql:datatype: DOUBLE
+  - name: htmIDC
+    "@id": "#matches_source.htmIDC"
+    datatype: long
+    description: htmIDC
+    mysql:datatype: BIGINT
+  - name: cntr
+    "@id": "#matches_source.cntr"
+    datatype: int
+    description: cntr
+    mysql:datatype: INT
+  - name: gaia_designation
+    "@id": "#matches_source.gaia_designation"
+    datatype: string
+    description: gaia_designation
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: gaia_ra
+    "@id": "#matches_source.gaia_ra"
+    datatype: double
+    description: gaia_ra
+    mysql:datatype: DOUBLE
+  - name: gaia_dec
+    "@id": "#matches_source.gaia_dec"
+    datatype: double
+    description: gaia_dec
+    mysql:datatype: DOUBLE
+  - name: bp
+    "@id": "#matches_source.bp"
+    datatype: float
+    description: bp
+    mysql:datatype: FLOAT
+  - name: g
+    "@id": "#matches_source.g"
+    datatype: float
+    description: g
+    mysql:datatype: FLOAT
+  - name: rp
+    "@id": "#matches_source.rp"
+    datatype: float
+    description: rp
+    mysql:datatype: FLOAT
+  - name: wise_designation
+    "@id": "#matches_source.wise_designation"
+    datatype: string
+    description: wise_designation
+    length: 21
+    mysql:datatype: VARCHAR(21)
+  - name: wise_ra
+    "@id": "#matches_source.wise_ra"
+    datatype: double
+    description: wise_ra
+    mysql:datatype: DOUBLE
+  - name: wise_dec
+    "@id": "#matches_source.wise_dec"
+    datatype: double
+    description: wise_dec
+    mysql:datatype: DOUBLE
+  - name: w1
+    "@id": "#matches_source.w1"
+    datatype: float
+    description: w1
+    mysql:datatype: FLOAT
+  - name: w2
+    "@id": "#matches_source.w2"
+    datatype: float
+    description: w2
+    mysql:datatype: FLOAT
+  - name: match_p
+    "@id": "#matches_source.match_p"
+    datatype: double
+    description: match_p
+    mysql:datatype: DOUBLE
+  - name: separation
+    "@id": "#matches_source.separation"
+    datatype: double
+    description: separation
+    mysql:datatype: DOUBLE
+  - name: eta
+    "@id": "#matches_source.eta"
+    datatype: double
+    description: eta
+    mysql:datatype: DOUBLE
+  - name: xi
+    "@id": "#matches_source.xi"
+    datatype: double
+    description: xi
+    mysql:datatype: DOUBLE
+  - name: gaia_avg_cont
+    "@id": "#matches_source.gaia_avg_cont"
+    datatype: double
+    description: gaia_avg_cont
+    mysql:datatype: DOUBLE
+  - name: wise_avg_cont
+    "@id": "#matches_source.wise_avg_cont"
+    datatype: double
+    description: wise_avg_cont
+    mysql:datatype: DOUBLE
+  - name: gaia_cont_f1
+    "@id": "#matches_source.gaia_cont_f1"
+    datatype: double
+    description: gaia_cont_f1
+    mysql:datatype: DOUBLE
+  - name: gaia_cont_f10
+    "@id": "#matches_source.gaia_cont_f10"
+    datatype: double
+    description: gaia_cont_f10
+    mysql:datatype: DOUBLE
+  - name: wise_cont_f1
+    "@id": "#matches_source.wise_cont_f1"
+    datatype: double
+    description: wise_cont_f1
+    mysql:datatype: DOUBLE
+  - name: wise_cont_f10
+    "@id": "#matches_source.wise_cont_f10"
+    datatype: double
+    description: wise_cont_f10
+    mysql:datatype: DOUBLE
+  - name: wise_fit_sig
+    "@id": "#matches_source.wise_fit_sig"
+    datatype: double
+    description: wise_fit_sig
+    mysql:datatype: DOUBLE
+  - name: chunkId
+    "@id": "#matches_source.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#matches_source.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
