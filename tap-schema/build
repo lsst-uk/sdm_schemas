@@ -14,8 +14,10 @@ do
 done
 
 # Build and push docker images
-docker build . -t lsstsqre/tap-schema-$ENVIRONMENT:$GIT_TAG
-docker push lsstsqre/tap-schema-$ENVIRONMENT:$GIT_TAG
+#docker build . -t lsstsqre/tap-schema-$ENVIRONMENT:$GIT_TAG
+docker build . -t lsstuk/tap-schema-$ENVIRONMENT:$GIT_TAG
+#docker push lsstsqre/tap-schema-$ENVIRONMENT:$GIT_TAG
+docker push lsstuk/tap-schema-$ENVIRONMENT:$GIT_TAG
 
 # Clean up any untracked files in the sql directory
 # between the different runs of this script.
