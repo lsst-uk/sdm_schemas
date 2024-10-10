@@ -1,0 +1,154 @@
+---
+name: ZTF_DR20
+"@id": "#ZTF_DR20"
+description: small area of ZTF around VIRGO RA between 195 and 215, Dec between minus 10 and 10
+tables:
+- name: Object
+  "@id": "#Object"
+  description: The Object table
+  columns:
+  - name: oid
+    "@id": "#Object.oid"
+    datatype: long
+    description: unique ID
+    mysql:datatype: BIGINT
+  - name: fid
+    "@id": "#Object.fid"
+    datatype: short
+    description: filter ID 1 zg 2 zr 3 zi
+    mysql:datatype: SMALLINT
+  - name: field
+    "@id": "#Object.field"
+    datatype: int
+    description: field
+    mysql:datatype: INT
+  - name: rcid
+    "@id": "#Object.rcid"
+    datatype: int
+    description: detector ID 
+    mysql:datatype: INT
+  - name: ra
+    "@id": "#Object.ra"
+    datatype: double
+    description: RA degress
+    mysql:datatype: DOUBLE
+  - name: dec
+    "@id": "#Object.dec"
+    datatype: double
+    description: Dec degrees
+    mysql:datatype: DOUBLE
+  - name: minmag
+    "@id": "#Object.minmag"
+    datatype: float
+    description: minmag
+    mysql:datatype: FLOAT
+  - name: maxmag
+    "@id": "#Object.maxmag"
+    datatype: float
+    description: maxmag
+    mysql:datatype: FLOAT
+  - name: nepochs
+    "@id": "#Object.nepochs"
+    datatype: int
+    description: nepochs
+    mysql:datatype: INT
+  - name: chunkId
+    "@id": "#Object.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#Object.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
+- name: Source
+  "@id": "#Source"
+  description: Individual epoch measurements
+  columns:
+  - name: sid
+    "@id": "#Source.sid"
+    datatype: char
+    description: unique ID
+    length: 22
+    mysql:datatype: CHAR(22)
+  - name: oid
+    "@id": "#Source.oid"
+    datatype: long
+    description: matches oid in Object table
+    mysql:datatype: BIGINT
+  - name: fid
+    "@id": "#Source.fid"
+    datatype: short
+    description: filter ID 1 zg 2 zr 3 zi
+    mysql:datatype: SMALLINT
+  - name: field
+    "@id": "#Source.field"
+    datatype: int
+    description: field
+    mysql:datatype: INT
+  - name: rcid
+    "@id": "#Source.rcid"
+    datatype: int
+    description: detector ID
+    mysql:datatype: INT
+  - name: ra
+    "@id": "#Source.ra"
+    datatype: double
+    description: RA degrees
+    mysql:datatype: DOUBLE
+  - name: dec
+    "@id": "#Source.dec"
+    datatype: double
+    description: Dec degrees
+    mysql:datatype: DOUBLE
+  - name: nepochs
+    "@id": "#Source.nepochs"
+    datatype: int
+    description: nepochs
+    mysql:datatype: INT
+  - name: minmag
+    "@id": "#Source.minmag"
+    datatype: float
+    description: minmag
+    mysql:datatype: FLOAT
+  - name: maxmag
+    "@id": "#Source.maxmag"
+    datatype: float
+    description: maxmag
+    mysql:datatype: FLOAT
+  - name: epoch
+    "@id": "#Source.epoch"
+    datatype: double
+    description: epoch
+    mysql:datatype: DOUBLE
+  - name: mag
+    "@id": "#Source.mag"
+    datatype: float
+    description: mag
+    mysql:datatype: FLOAT
+  - name: magerr
+    "@id": "#Source.magerr"
+    datatype: float
+    description: magerr
+    mysql:datatype: FLOAT
+  - name: clrcoeff
+    "@id": "#Source.clrcoeff"
+    datatype: float
+    description: clrcoeff
+    mysql:datatype: FLOAT
+  - name: catflags
+    "@id": "#Source.catflags"
+    datatype: int
+    description: catflags
+    mysql:datatype: INT
+  - name: chunkId
+    "@id": "#Source.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INTEGER
+  - name: subChunkId
+    "@id": "#Source.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INTEGER
