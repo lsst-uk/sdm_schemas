@@ -1,16 +1,31 @@
 #!/bin/bash -ex
 ENVIRONMENT="$1"
-GIT_TAG=`echo $GITHUB_REF | sed -E 's,refs/(heads|tags)/,,' | sed -E 's,/,-,g'`
-shift
 
-./set_schema_index $@
+echo "GITHUB_REF: $GITHUB_REF"
+if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+  # Tag
+  GIT_TAG=$(echo $GITHUB_REF | sed -E 's,refs/tags/,,')
+elif [[ "$GITHUB_REF" == refs/heads/* ]]; then
+  # Branch
+  GIT_TAG=$(echo $GITHUB_REF | sed -E 's,refs/heads/,,')
+elif [[ "$GITHUB_REF" == refs/pull/* ]]; then
+  # Pull Request
+  GIT_TAG=$GITHUB_HEAD_REF
+fi
+
+GIT_TAG=$(echo $GIT_TAG | sed -E 's,/,-,g')
+echo "GIT_TAG: $GIT_TAG"
+
+shift
 
 # Generate SQL files from Felis yaml files
 # Place the SQL files in the sql directory, which gets
 # copied into the docker image.
+schema_index=0
 for file in $@
 do
-    felis load-tap --dry-run --engine-url=postgresql+psycopg2:// --tap-schema-name=tap_schema --tap-tables-postfix=11 $file > sql/`basename $file`.sql
+    felis load-tap --tap-schema-index $schema_index --dry-run --engine-url=mysql:// --tap-schema-name=tap_schema --tap-tables-postfix=11 $file > sql/`basename $file`.sql
+    schema_index=$((schema_index+1))
 done
 
 # Build and push docker images
@@ -18,6 +33,8 @@ done
 docker build . -t lsstuk/tap-schema-$ENVIRONMENT:$GIT_TAG
 #docker push lsstsqre/tap-schema-$ENVIRONMENT:$GIT_TAG
 docker push lsstuk/tap-schema-$ENVIRONMENT:$GIT_TAG
+
+echo "Pushed Docker image: lsstsqre/tap-schema-$ENVIRONMENT:$GIT_TAG"
 
 # Clean up any untracked files in the sql directory
 # between the different runs of this script.

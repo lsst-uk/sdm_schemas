@@ -4,9 +4,19 @@
 # values that control the presentation order of schemas.  This is respected by the Portal Aspect.
 #
 ./build mock
-./build idfprod ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml ../yml/dp01_dc2.yaml
-./build idfint ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml ../yml/dp01_dc2.yaml
-./build idfdev ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml ../yml/dp01_dc2.yaml
-./build idfsso ../yml/dp03.yaml
-./build usdf-dev ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml ../yml/oga_live_obscore.yaml
-./build usdf-prod ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml
+
+./build idfprod-tap ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml
+./build idfint-tap ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml
+./build idfdev-tap ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml
+./build usdf-prod-tap ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml
+./build usdf-dev-tap ../yml/dp02_dc2.yaml ../yml/dp02_obscore.yaml
+
+./build usdf-prod-livetap ../yml/oga_live_obscore.yaml
+./build usdf-dev-livetap ../yml/oga_live_obscore.yaml
+
+./build idfprod-sso ../yml/dp03_10yr.yaml ../yml/dp03_1yr.yaml
+./build idfint-sso ../yml/dp03_10yr.yaml ../yml/dp03_1yr.yaml
+./build idfdev-sso ../yml/dp03_10yr.yaml ../yml/dp03_1yr.yaml
+./build usdf-prod-sso ../yml/dp03_10yr.yaml ../yml/dp03_1yr.yaml
+./build usdf-dev-sso ../yml/dp03_10yr.yaml ../yml/dp03_1yr.yaml
+
