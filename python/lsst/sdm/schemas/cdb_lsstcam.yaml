@@ -1,12 +1,16 @@
 ---
-name: cdb_lsstcomcamsim
-"@id": "#cdb_lsstcomcamsim"
-description: Consolidated Database for LSSTComCamSim
+name: cdb_lsstcam
+"@id": "#cdb_lsstcam"
+description: >
+  The Consolidated Database for LSSTCam schema contains information for each exposure and visit (and each detector within those) taken by the instrument, the primary instrument for the Legacy Survey of Space and Time.
+  This includes observatory data from the FITS image header metadata and measurements and metrics from Rapid Analysis and other data processing.
 version:
-  current: "3.2.0"
+  current: "1.0.1"
 tables:
 - name: exposure
   "@id": "#exposure"
+  description: >
+    Information from observatory systems about each raw image taken
   primaryKey:
   - "#exposure.day_obs"
   - "#exposure.seq_num"
@@ -295,6 +299,9 @@ tables:
     ivoa:ucd: pos.outline;obs.field
 - name: exposure_flexdata
   "@id": "#exposure_flexdata"
+  description: >
+    Flexible key/value metadata about each raw image taken;
+    used for development and engineering purposes
   primaryKey:
   - "#exposure_flexdata.day_obs"
   - "#exposure_flexdata.seq_num"
@@ -356,6 +363,8 @@ tables:
     description: Content of value as a string.
 - name: exposure_flexdata_schema
   "@id": "#exposure_flexdata_schema"
+  description: >
+    Key names and value types used in the exposure_flexdata table
   primaryKey:
   - "#exposure_flexdata_schema.key"
   columns:
@@ -388,6 +397,8 @@ tables:
     description: IVOA Unified Content Descriptor (https://www.ivoa.net/documents/UCD1+/).
 - name: ccdexposure
   "@id": "#ccdexposure"
+  description: >
+    Information from observatory systems about each detector (CCD) within each raw image taken
   primaryKey:
   - "#ccdexposure.ccdexposure_id"
   constraints:
@@ -462,6 +473,8 @@ tables:
     ivoa:ucd: pos.outline;obs.field
 - name: ccdexposure_camera
   "@id": "#ccdexposure_camera"
+  description: >
+    Information from the Camera Control System about each detector (CCD) within each raw image taken
   primaryKey:
   - "#ccdexposure_camera.ccdexposure_id"
   constraints:
@@ -488,6 +501,9 @@ tables:
     ivoa:ucd: phys.temperature
 - name: ccdexposure_flexdata
   "@id": "#ccdexposure_flexdata"
+  description: >
+    Flexible key/value metadata about each detector (CCD) within each raw image taken;
+    used for development and engineering purposes
   primaryKey:
   - "#ccdexposure_flexdata.obs_id"
   - "#ccdexposure_flexdata.key"
@@ -522,6 +538,8 @@ tables:
     description: Content of value as a string.
 - name: ccdexposure_flexdata_schema
   "@id": "#ccdexposure_flexdata_schema"
+  description: >
+    Key names and value types used in the ccdexposure_flexdata table
   primaryKey:
   - "#ccdexposure_flexdata_schema.key"
   columns:
@@ -554,6 +572,9 @@ tables:
     description: IVOA Unified Content Descriptor (https://www.ivoa.net/documents/UCD1+/).
 - name: visit1
   "@id": "#visit1"
+  description: >
+    Information from observatory systems about each visit in visit system 1 (visit per exposure);
+    describes processed visit images (or calibrated exposures)
   primaryKey:
   - "#visit1.day_obs"
   - "#visit1.seq_num"
@@ -828,6 +849,9 @@ tables:
     ivoa:ucd: pos.outline;obs.field
 - name: visit1_quicklook
   "@id": "#visit1_quicklook"
+  description: >
+    Information from Summit Rapid Analysis about each visit in visit system 1 (visit per exposure);
+    describes processed visit images (or calibrated exposures)
   primaryKey:
   - "#visit1_quicklook.day_obs"
   - "#visit1_quicklook.seq_num"
@@ -866,6 +890,7 @@ tables:
     "@id": "#visit1_quicklook.n_inputs"
     datatype: int
     description: Number of CCDs used to compute the visit aggregates.
+    ivoa:unit: count
   - name: pixel_scale_min
     "@id": "#visit1_quicklook.pixel_scale_min"
     datatype: float
@@ -1005,102 +1030,130 @@ tables:
     "@id": "#visit1_quicklook.max_dist_to_nearest_psf_min"
     datatype: float
     description: Maximum distance of an unmasked pixel to its nearest model PSF star (minimum across all detectors).
+    ivoa:unit: pixel
   - name: max_dist_to_nearest_psf_max
     "@id": "#visit1_quicklook.max_dist_to_nearest_psf_max"
     datatype: float
     description: Maximum distance of an unmasked pixel to its nearest model PSF star (maximum across all detectors).
+    ivoa:unit: pixel
   - name: max_dist_to_nearest_psf_median
     "@id": "#visit1_quicklook.max_dist_to_nearest_psf_median"
     datatype: float
     description: Maximum distance of an unmasked pixel to its nearest model PSF star (median across all detectors).
+    ivoa:unit: pixel
   - name: mean_var_min
     "@id": "#visit1_quicklook.mean_var_min"
     datatype: float
     description: Mean of the variance plane (minimum across all detectors).
+    ivoa:unit: count**2
+    ivoa:ucd: phot;phys.electron
   - name: mean_var_max
     "@id": "#visit1_quicklook.mean_var_max"
     datatype: float
     description: Mean of the variance plane (maximum across all detectors).
+    ivoa:unit: count**2
+    ivoa:ucd: phot;phys.electron
   - name: mean_var_median
     "@id": "#visit1_quicklook.mean_var_median"
     datatype: float
     description: Mean of the variance plane (median across all detectors).
+    ivoa:unit: count**2
+    ivoa:ucd: phot;phys.electron
   - name: n_psf_star_min
     "@id": "#visit1_quicklook.n_psf_star_min"
     datatype: int
     description: Number of stars used for PSF model (minimum across all detectors).
+    ivoa:unit: count
   - name: n_psf_star_max
     "@id": "#visit1_quicklook.n_psf_star_max"
     datatype: int
     description: Number of stars used for PSF model (maximum across all detectors).
+    ivoa:unit: count
   - name: n_psf_star_median
     "@id": "#visit1_quicklook.n_psf_star_median"
     datatype: int
     description: Number of stars used for PSF model (median across all detectors).
+    ivoa:unit: count
   - name: n_psf_star_total
     "@id": "#visit1_quicklook.n_psf_star_total"
     datatype: int
     description: Number of stars used for PSF model (total across all detectors).
+    ivoa:unit: count
   - name: psf_area_min
     "@id": "#visit1_quicklook.psf_area_min"
     datatype: float
     description: PSF area (minimum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_area_max
     "@id": "#visit1_quicklook.psf_area_max"
     datatype: float
     description: PSF area (maximum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_area_median
     "@id": "#visit1_quicklook.psf_area_median"
     datatype: float
     description: PSF area (median across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_ixx_min
     "@id": "#visit1_quicklook.psf_ixx_min"
     datatype: float
     description: PSF Ixx moment (minimum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_ixx_max
     "@id": "#visit1_quicklook.psf_ixx_max"
     datatype: float
     description: PSF Ixx moment (maximum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_ixx_median
     "@id": "#visit1_quicklook.psf_ixx_median"
     datatype: float
     description: PSF Ixx moment (median across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_ixy_min
     "@id": "#visit1_quicklook.psf_ixy_min"
     datatype: float
     description: PSF Ixy moment (minimum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_ixy_max
     "@id": "#visit1_quicklook.psf_ixy_max"
     datatype: float
     description: PSF Ixy moment (maximum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_ixy_median
     "@id": "#visit1_quicklook.psf_ixy_median"
     datatype: float
     description: PSF Ixy moment (median across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_iyy_min
     "@id": "#visit1_quicklook.psf_iyy_min"
     datatype: float
     description: PSF Iyy moment (minimum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_iyy_max
     "@id": "#visit1_quicklook.psf_iyy_max"
     datatype: float
     description: PSF Iyy moment (maximum across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_iyy_median
     "@id": "#visit1_quicklook.psf_iyy_median"
     datatype: float
     description: PSF Iyy moment (median across all detectors).
+    ivoa:unit: pixel**2
   - name: psf_sigma_min
     "@id": "#visit1_quicklook.psf_sigma_min"
     datatype: float
     description: PSF sigma (minimum across all detectors).
+    ivoa:unit: pixel
   - name: psf_sigma_max
     "@id": "#visit1_quicklook.psf_sigma_max"
     datatype: float
     description: PSF sigma (maximum across all detectors).
+    ivoa:unit: pixel
   - name: psf_sigma_median
     "@id": "#visit1_quicklook.psf_sigma_median"
     datatype: float
     description: PSF sigma (median across all detectors).
+    ivoa:unit: pixel
   - name: psf_star_delta_e1_median_min
     "@id": "#visit1_quicklook.psf_star_delta_e1_median_min"
     datatype: float
@@ -1153,26 +1206,32 @@ tables:
     "@id": "#visit1_quicklook.psf_star_delta_size_median_min"
     datatype: float
     description: Median size residual (starSize - psfSize) for PSF stars (minimum across all detectors).
+    ivoa:unit: pixel
   - name: psf_star_delta_size_median_max
     "@id": "#visit1_quicklook.psf_star_delta_size_median_max"
     datatype: float
     description: Median size residual (starSize - psfSize) for PSF stars (maximum across all detectors).
+    ivoa:unit: pixel
   - name: psf_star_delta_size_median_median
     "@id": "#visit1_quicklook.psf_star_delta_size_median_median"
     datatype: float
     description: Median size residual (starSize - psfSize) for PSF stars (median across all detectors).
+    ivoa:unit: pixel
   - name: psf_star_delta_size_scatter_min
     "@id": "#visit1_quicklook.psf_star_delta_size_scatter_min"
     datatype: float
     description: Scatter (via MAD) of size residual (starSize - psfSize) for stars (minimum across all detectors).
+    ivoa:unit: pixel
   - name: psf_star_delta_size_scatter_max
     "@id": "#visit1_quicklook.psf_star_delta_size_scatter_max"
     datatype: float
     description: Scatter (via MAD) of size residual (starSize - psfSize) for stars (maximum across all detectors).
+    ivoa:unit: pixel
   - name: psf_star_delta_size_scatter_median
     "@id": "#visit1_quicklook.psf_star_delta_size_scatter_median"
     datatype: float
     description: Scatter (via MAD) of size residual (starSize - psfSize) for stars (median across all detectors).
+    ivoa:unit: pixel
   - name: psf_star_scaled_delta_size_scatter_min
     "@id": "#visit1_quicklook.psf_star_scaled_delta_size_scatter_min"
     datatype: float
@@ -1189,38 +1248,53 @@ tables:
     "@id": "#visit1_quicklook.psf_trace_radius_delta_min"
     datatype: float
     description: Delta (max - min) of model PSF trace radius values evaluated on a grid of unmasked pixels (minimum across all detectors).
+    ivoa:unit: pixel
   - name: psf_trace_radius_delta_max
     "@id": "#visit1_quicklook.psf_trace_radius_delta_max"
     datatype: float
     description: Delta (max - min) of model PSF trace radius values evaluated on a grid of unmasked pixels (maximum across all detectors).
+    ivoa:unit: pixel
   - name: psf_trace_radius_delta_median
     "@id": "#visit1_quicklook.psf_trace_radius_delta_median"
     datatype: float
     description: Delta (max - min) of model PSF trace radius values evaluated on a grid of unmasked pixels (median across all detectors).
+    ivoa:unit: pixel
   - name: sky_bg_min
     "@id": "#visit1_quicklook.sky_bg_min"
     datatype: float
     description: Average sky background (minimum across all detectors).
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: sky_bg_max
     "@id": "#visit1_quicklook.sky_bg_max"
     datatype: float
     description: Average sky background (maximum across all detectors).
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: sky_bg_median
     "@id": "#visit1_quicklook.sky_bg_median"
     datatype: float
     description: Average sky background (median across all detectors).
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: sky_noise_min
     "@id": "#visit1_quicklook.sky_noise_min"
     datatype: float
     description: RMS noise of the sky background (minimum across all detectors).
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: sky_noise_max
     "@id": "#visit1_quicklook.sky_noise_max"
     datatype: float
     description: RMS noise of the sky background (maximum across all detectors).
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: sky_noise_median
     "@id": "#visit1_quicklook.sky_noise_median"
     datatype: float
     description: RMS noise of the sky background (median across all detectors).
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: seeing_zenith_500nm_min
     "@id": "#visit1_quicklook.seeing_zenith_500nm_min"
     datatype: double
@@ -1237,14 +1311,17 @@ tables:
     "@id": "#visit1_quicklook.zero_point_min"
     datatype: float
     description: Photometric zero point (minimum across all detectors).
+    ivoa:unit: mag
   - name: zero_point_max
     "@id": "#visit1_quicklook.zero_point_max"
     datatype: float
     description: Photometric zero point (maximum across all detectors).
+    ivoa:unit: mag
   - name: zero_point_median
     "@id": "#visit1_quicklook.zero_point_median"
     datatype: float
     description: Photometric zero point (median across all detectors).
+    ivoa:unit: mag
   - name: low_snr_source_count_min
     "@id": "#visit1_quicklook.low_snr_source_count_min"
     datatype: int
@@ -1285,23 +1362,102 @@ tables:
     datatype: int
     description: Count of high signal-to-noise-ratio sources (total across all detectors).
     ivoa:unit: count
+- name: exposure_quicklook
+  "@id": "#exposure_quicklook"
+  description: >
+    Information from Summit Rapid Analysis about each raw image taken
+  primaryKey:
+  - "#exposure_quicklook.day_obs"
+  - "#exposure_quicklook.seq_num"
+  constraints:
+  - name: fk_exposure_quicklook_day_obs_seq_num
+    "@id": "#exposure_quicklook.fk_exposure_quicklook_day_obs_seq_num"
+    "@type": ForeignKey
+    description: Quicklook day_obs must be an Exposure day_obs.
+    columns: ["#exposure_quicklook.day_obs", "#exposure_quicklook.seq_num"]
+    referencedColumns: ["#exposure.day_obs", "#exposure.seq_num"]
+  - name: fk_exposure_quicklook_obs_id
+    "@id": "#exposure_quicklook.fk_exposure_quicklook_obs_id"
+    "@type": ForeignKey
+    description: Quicklook exposure_id must be an Exposure id.
+    columns: ["#exposure_quicklook.exposure_id"]
+    referencedColumns: ["#exposure.exposure_id"]
+  columns:
+  - name: exposure_id
+    "@id": "#exposure_quicklook.exposure_id"
+    datatype: long
+    nullable: false
+    description: Unique identifier.
+  - name: day_obs
+    "@id": "#exposure_quicklook.day_obs"
+    datatype: int
+    nullable: false
+    description: Day of observation.
+    ivoa:ucd: meta.id.part
+  - name: seq_num
+    "@id": "#exposure_quicklook.seq_num"
+    datatype: int
+    nullable: false
+    description: Sequence number.
+    ivoa:ucd: meta.id.part
   - name: postisr_pixel_median_median
-    "@id": "#visit1_quicklook.postisr_pixel_median_median"
+    "@id": "#exposure_quicklook.postisr_pixel_median_median"
     datatype: float
     description: Median postISR pixel value (median across all detectors).
-    ivoa:unit: electron
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: postisr_pixel_median_mean
-    "@id": "#visit1_quicklook.postisr_pixel_median_mean"
+    "@id": "#exposure_quicklook.postisr_pixel_median_mean"
     datatype: float
     description: Median postISR pixel value (mean across all detectors).
-    ivoa:unit: electron
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
   - name: postisr_pixel_median_max
-    "@id": "#visit1_quicklook.postisr_pixel_median_max"
+    "@id": "#exposure_quicklook.postisr_pixel_median_max"
     datatype: float
     description: Median postISR pixel value (max across all detectors).
-    ivoa:unit: electron
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron
+  - name: mount_motion_image_degradation
+    "@id": "#exposure_quicklook.mount_motion_image_degradation"
+    datatype: float
+    ivoa:unit: arcsec
+    description: Image degradation due to mount motion.
+  - name: mount_motion_image_degradation_az
+    "@id": "#exposure_quicklook.mount_motion_image_degradation_az"
+    datatype: float
+    ivoa:unit: arcsec
+    description: Image degradation due to mount motion in azimuth.
+  - name: mount_motion_image_degradation_rot
+    "@id": "#exposure_quicklook.mount_motion_image_degradation_rotator"
+    datatype: float
+    ivoa:unit: arcsec
+    description: Image degradation due to rotator jitter.
+  - name: mount_jitter_rms
+    "@id": "#exposure_quicklook.mount_jitter_rms"
+    datatype: float
+    ivoa:unit: arcsec
+    description: RMS mount jitter.
+  - name: mount_jitter_rms_az
+    "@id": "#exposure_quicklook.mount_jitter_rms_az"
+    datatype: float
+    ivoa:unit: arcsec
+    description: Azimuth RMS mount jitter.
+  - name: mount_jitter_rms_el
+    "@id": "#exposure_quicklook.mount_jitter_rms_el"
+    datatype: float
+    ivoa:unit: arcsec
+    description: Elevation RMS mount jitter.
+  - name: mount_jitter_rms_rot
+    "@id": "#exposure_quicklook.mount_jitter_rms_rotator"
+    datatype: float
+    ivoa:unit: arcsec
+    description: Rotator RMS mount jitter.
 - name: ccdvisit1
   "@id": "#ccdvisit1"
+  description: >
+    Information from observatory systems about each detector (CCD) within each visit in visit system 1 (visit per exposure);
+    describes detectors in processed visit images (or calibrated exposures)
   primaryKey:
   - "#ccdvisit1.ccdvisit_id"
   columns:
@@ -1331,6 +1487,9 @@ tables:
     ivoa:ucd: pos.outline;obs.field
 - name: ccdvisit1_quicklook
   "@id": "#ccdvisit1_quicklook"
+  description: >
+    Information from Summit Rapid Analysis about each detector (CCD) within each visit in visit system 1 (visit per exposure);
+    describes detectors in processed visit images (or calibrated exposures)
   primaryKey:
   - "#ccdvisit1_quicklook.ccdvisit_id"
   constraints:
@@ -1501,8 +1660,28 @@ tables:
     datatype: float
     description: Maximum distance of an unmasked pixel to its nearest model PSF star.
     ivoa:unit: pixel
+- name: ccdexposure_quicklook
+  "@id": "#ccdexposure_quicklook"
+  description: >
+    Information from Summit Rapid Analysis about each detector (CCD) within each raw image taken
+  primaryKey:
+  - "#ccdexposure_quicklook.ccdexposure_id"
+  constraints:
+  - name: fk_ccdexposure_quicklook_obs_id
+    "@id": "#ccdexposure_quicklook.fk_ccdexposure_quicklook_obs_id"
+    "@type": ForeignKey
+    description: Quicklook ccdexposure_id must be a CcdExposure ccdexposure_id.
+    columns: ["#ccdexposure_quicklook.ccdexposure_id"]
+    referencedColumns: ["#ccdexposure.ccdexposure_id"]
+  columns:
+  - name: ccdexposure_id
+    "@id": "#ccdexposure_quicklook.ccdexposure_id"
+    datatype: long
+    nullable: false
+    description: Unique identifier.
   - name: postisr_pixel_median
-    "@id": "#visit1_quicklook.postisr_pixel_median"
+    "@id": "#ccdexposure_quicklook.postisr_pixel_median"
     datatype: float
     description: Median postISR pixel value.
-    ivoa:unit: electron
+    ivoa:unit: count
+    ivoa:ucd: phot;phys.electron

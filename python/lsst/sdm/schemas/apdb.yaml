@@ -1,7 +1,7 @@
 ---
 name: "ApdbSchema"
 "@id": "#apdbSchema"
-version: "2.0.1"
+version: "6.0.0"
 description: The Alert Production Database (APDB) contains the catalogs resulting from
   image differencing during nightly Prompt Processing as well as the results of
   daily Solar System Processing.
@@ -391,7 +391,7 @@ tables:
     datatype: float
     description: Standard deviation of the distribution of y_psfFlux.
     fits:tunit: nJy
-    ivoa:ucd: stat.error
+    ivoa:ucd: stat.stdev
   - name: y_psfFluxChi2
     "@id": "#DiaObject.y_psfFluxChi2"
     datatype: float
@@ -666,6 +666,7 @@ tables:
     "@id": "#DiaObject.u_psfFluxLinearIntercept"
     datatype: float
     description: Linear best fit Intercept of the u band fluxes.
+    fits:tunit: nJy
   - name: u_psfFluxMaxSlope
     "@id": "#DiaObject.u_psfFluxMaxSlope"
     datatype: float
@@ -1009,7 +1010,7 @@ tables:
   - name: y_psfFluxMaxSlope
     "@id": "#DiaObject.y_psfFluxMaxSlope"
     datatype: float
-    description: Maximum slope between y band flux obsevations max(delta_flux/delta_time)
+    description: Maximum slope between y band flux obsevations max(delta_flux/delta_time).
     fits:tunit: nJy/d
   - name: y_psfFluxErrMean
     "@id": "#DiaObject.y_psfFluxErrMean"
@@ -1479,6 +1480,11 @@ tables:
     "@id": "#DiaSource.apFlux_flag_apertureTruncated"
     datatype: boolean
     description: Aperture did not fit within measurement image.
+    fits:tunit:
+  - name: is_negative
+    "@id": "#DiaSource.is_negative"
+    datatype: boolean
+    description: Source was detected as significantly negative.
     fits:tunit:
   - name: snr
     "@id": "#DiaSource.snr"
@@ -2014,7 +2020,11 @@ tables:
   - name: isDipole
     "@id": "#DiaSource.isDipole"
     datatype: boolean
-    description: Object determined to be a dipole.
+    description: Source well fit by a dipole.
+  - name: dipoleFitAttempted
+    "@id": "#DiaSource.dipoleFitAttempted"
+    datatype: boolean
+    description: Attempted to fit a dipole model to this source.
   - name: time_processed
     "@id": "#DiaSource.time_processed"
     datatype: timestamp
@@ -2051,7 +2061,17 @@ tables:
   - name: pixelFlags_edge
     "@id": "#DiaSource.pixelFlags_edge"
     datatype: boolean
-    description: Some of the source footprint is outside usable exposure region (masked EDGE or NO_DATA, or centroid off image).
+    description: Some of the source footprint is outside usable exposure region (masked EDGE or centroid off image).
+    fits:tunit:
+  - name: pixelFlags_nodata
+    "@id": "#DiaSource.pixelFlags_nodata"
+    datatype: boolean
+    description: NO_DATA pixel in the source footprint.
+    fits:tunit:
+  - name: pixelFlags_nodataCenter
+    "@id": "#DiaSource.pixelFlags_nodataCenter"
+    datatype: boolean
+    description: NO_DATA pixel in the 3x3 region around the centroid.
     fits:tunit:
   - name: pixelFlags_interpolated
     "@id": "#DiaSource.pixelFlags_interpolated"
@@ -2379,6 +2399,11 @@ tables:
     description: Covariance of pmDec and parallax.
     ivoa:ucd: stat.covariance
     fits:tunit: mas**2/yr
+  - name: nDiaSources
+    "@id": "#DiaObjectLast.nDiaSources"
+    datatype: int
+    nullable: false
+    description: Total number of DiaSources associated with this DiaObject.
   primaryKey: "#DiaObjectLast.diaObjectId"
 - name: MPCORB
   "@id": "#MPCORB"
