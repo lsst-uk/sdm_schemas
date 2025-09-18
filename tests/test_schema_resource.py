@@ -31,7 +31,7 @@ class SchemaResourceTestCase(unittest.TestCase):
 
     def test_read_resource(self) -> None:
         """Test that schema data can be read from a resource."""
-        resource = importlib.resources.files("lsst.sdm_schemas.schemas").joinpath(
+        resource = importlib.resources.files("lsst.sdm.schemas").joinpath(
             "dp02_dc2.yaml"
         )
         raw_data = resource.read_text()

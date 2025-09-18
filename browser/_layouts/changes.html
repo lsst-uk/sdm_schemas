@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include _header.html %}
+  </head>
+  <body>
+    <div id="container">
+      <nav id="sidebar">
+        {% include _logo.html %}
+        <ul>
+            <li><b>Updated:</b> {{ site.time | date: "%B %-d, %Y" }}</li>
+        </ul>
+        <ul>
+          <li><a href=".">Schema Browser</a></li>
+          {% include _schema_list.html include_description=false %}
+        </ul>
+        <ul>
+            <li><a href="./CHANGES.html">Release Notes</a></li>
+        </ul>
+        <ul>
+        <li><a href="/v">Change version</a></li>
+        </ul>
+      </nav>
+      <div id="content">
+        <main class="main-content">
+          <h1>{{ page.title }}</h1>
+          {{ content }}
+          {% include _footer.html %}
+        </main>
+      </div>
+    </div>
+</body>
+</html>
