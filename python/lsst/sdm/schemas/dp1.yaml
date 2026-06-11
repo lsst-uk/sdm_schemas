@@ -4670,7 +4670,7 @@ tables:
     tap:principal: 1
   - name: detect_isIsolated
     description: This source is not a part of a blend.
-    datatype: boolean
+    datatype: int
     tap:principal: 1
   - name: detect_fromBlend
     description: This source is deblended from a parent with more than one child.
@@ -4680,7 +4680,7 @@ tables:
     description: True if source has no children and is in the inner region of a coadd
       patch and is in the inner region of a coadd tract and is not detected in a pseudo-filter
       (see config.pseudoFilterList) and is a deblended child
-    datatype: boolean
+    datatype: int
   - name: deblend_nChild
     description: Number of children this object has (defaults to 0)
     datatype: int
