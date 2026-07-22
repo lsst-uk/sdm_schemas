@@ -1,0 +1,2779 @@
+---
+name: macauff_gaiadr3x2mass
+"@id": "#macauff_gaiadr3x2mass"
+description: Match and non-match table for macauff cross-matches of Gaia DR3 and 2MASS. Run Dec 2025
+tables:
+- name: matches_astro_photo
+  "@id": "#matches_astro_photo"
+  description: Counterpart associations between Gaia and 2MASS PSC, as well as derived values from the cross-match process such as match probability and contamination flux
+  columns:
+  - name: gaia_source_id
+    "@id": "#matches_astro_photo.gaia_source_id"
+    datatype: long
+    description: The Gaia DR3 source ID
+    mysql:datatype: BIGINT
+  - name: gaia_designation
+    "@id": "#matches_astro_photo.gaia_designation"
+    datatype: string
+    description: The Gaia DR3 object designation.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: gaia_ra
+    "@id": "#matches_astro_photo.gaia_ra"
+    datatype: double
+    description: Right Ascension of the Gaia DR3 source.
+    mysql:datatype: DOUBLE
+  - name: gaia_dec
+    "@id": "#matches_astro_photo.gaia_dec"
+    datatype: double
+    description: The Gaia DR3 declination.
+    mysql:datatype: DOUBLE
+  - name: bp
+    "@id": "#matches_astro_photo.bp"
+    datatype: float
+    description: The BP magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: g
+    "@id": "#matches_astro_photo.g"
+    datatype: float
+    description: The Gaia DR3 G magnitude.
+    mysql:datatype: FLOAT
+  - name: rp
+    "@id": "#matches_astro_photo.rp"
+    datatype: float
+    description: The Gaia DR3 RP magnitude.
+    mysql:datatype: FLOAT
+  - name: twomass_name
+    "@id": "#matches_astro_photo.twomass_name"
+    datatype: string
+    description: The object identifier from the 2MASS catalogue, both the PSC and the XSC.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: twomass_ra
+    "@id": "#matches_astro_photo.twomass_ra"
+    datatype: double
+    description: Right Ascension of the object as quoted by the 2MASS catalogue.
+    mysql:datatype: DOUBLE
+  - name: twomass_dec
+    "@id": "#matches_astro_photo.twomass_dec"
+    datatype: double
+    description: 2MASS Declination.
+    mysql:datatype: DOUBLE
+  - name: j
+    "@id": "#matches_astro_photo.j"
+    datatype: float
+    description: J magnitude from 2MASS.
+    mysql:datatype: FLOAT
+  - name: h
+    "@id": "#matches_astro_photo.h"
+    datatype: float
+    description: H magnitude from 2MASS.
+    mysql:datatype: FLOAT
+  - name: k
+    "@id": "#matches_astro_photo.k"
+    datatype: float
+    description: K magnitude from 2MASS.
+    mysql:datatype: FLOAT
+  - name: twomass_key
+    "@id": "#matches_astro_photo.twomass_key"
+    datatype: long
+    description: The pts_key column from the 2MASS PSC catalogue, or minus the ext_key column from the 2MASS XSC catalogue.
+    mysql:datatype: BIGINT
+  - name: match_p
+    "@id": "#matches_astro_photo.match_p"
+    datatype: double
+    description: Overall probability that the Gaia DR3 and 2MASS sources are detections of the same object, as given by equation 26 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: separation
+    "@id": "#matches_astro_photo.separation"
+    datatype: double
+    description: On-sky distance between the two detections, in arcseconds.
+    mysql:datatype: DOUBLE
+  - name: eta
+    "@id": "#matches_astro_photo.eta"
+    datatype: double
+    description: Photometric logarithmic likelihood ratio of Gaia DR3-2MASS match, as described by equation 37 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: xi
+    "@id": "#matches_astro_photo.xi"
+    datatype: double
+    description: Astrometric logarithmic likelihood ratio of Gaia DR3-2MASS match, as described by equation 38 of Wilson & Naylor (2018a)
+    mysql:datatype: DOUBLE
+  - name: gaia_avg_cont
+    "@id": "#matches_astro_photo.gaia_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated Gaia PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source.
+    mysql:datatype: DOUBLE
+  - name: twomass_avg_cont
+    "@id": "#matches_astro_photo.twomass_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated 2MASS PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source.
+    mysql:datatype: DOUBLE
+  - name: gaia_cont_f1
+    "@id": "#matches_astro_photo.gaia_cont_f1"
+    datatype: double
+    description: Probability of Gaia source having contaminant of at least 1% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: gaia_cont_f10
+    "@id": "#matches_astro_photo.gaia_cont_f10"
+    datatype: double
+    description: Probability of Gaia source having contaminant of at least 10% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: twomass_cont_f1
+    "@id": "#matches_astro_photo.twomass_cont_f1"
+    datatype: double
+    description: Probability of 2MASS source having contaminant of at least 1% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: twomass_cont_f10
+    "@id": "#matches_astro_photo.twomass_cont_f10"
+    datatype: double
+    description: Probability of 2MASS source having contaminant of at least 10% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: solution_id
+    "@id": "#matches_astro_photo.solution_id"
+    datatype: long
+    description: solution_id
+    mysql:datatype: BIGINT
+  - name: designation
+    "@id": "#matches_astro_photo.designation"
+    datatype: string
+    description: designation
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: source_id
+    "@id": "#matches_astro_photo.source_id"
+    datatype: long
+    description: source_id
+    mysql:datatype: BIGINT
+  - name: random_index
+    "@id": "#matches_astro_photo.random_index"
+    datatype: long
+    description: random_index
+    mysql:datatype: BIGINT
+  - name: ref_epoch
+    "@id": "#matches_astro_photo.ref_epoch"
+    datatype: float
+    description: ref_epoch
+    mysql:datatype: FLOAT
+  - name: ra
+    "@id": "#matches_astro_photo.ra"
+    datatype: double
+    description: ra_
+    mysql:datatype: DOUBLE
+  - name: ra_error
+    "@id": "#matches_astro_photo.ra_error"
+    datatype: float
+    description: ra_error
+    mysql:datatype: FLOAT
+  - name: dec
+    "@id": "#matches_astro_photo.dec"
+    datatype: double
+    description: dec
+    mysql:datatype: DOUBLE
+  - name: dec_error
+    "@id": "#matches_astro_photo.dec_error"
+    datatype: float
+    description: dec_error
+    mysql:datatype: FLOAT
+  - name: parallax
+    "@id": "#matches_astro_photo.parallax"
+    datatype: double
+    description: parallax
+    mysql:datatype: DOUBLE
+  - name: parallax_error
+    "@id": "#matches_astro_photo.parallax_error"
+    datatype: float
+    description: parallax_error
+    mysql:datatype: FLOAT
+  - name: parallax_over_error
+    "@id": "#matches_astro_photo.parallax_over_error"
+    datatype: float
+    description: parallax_over_error
+    mysql:datatype: FLOAT
+  - name: pm
+    "@id": "#matches_astro_photo.pm"
+    datatype: float
+    description: pm_
+    mysql:datatype: FLOAT
+  - name: pmra
+    "@id": "#matches_astro_photo.pmra"
+    datatype: double
+    description: pmra
+    mysql:datatype: DOUBLE
+  - name: pmra_error
+    "@id": "#matches_astro_photo.pmra_error"
+    datatype: float
+    description: pmra_error
+    mysql:datatype: FLOAT
+  - name: pmdec
+    "@id": "#matches_astro_photo.pmdec"
+    datatype: double
+    description: pmdec
+    mysql:datatype: DOUBLE
+  - name: pmdec_error
+    "@id": "#matches_astro_photo.pmdec_error"
+    datatype: float
+    description: pmdec_error
+    mysql:datatype: FLOAT
+  - name: ra_dec_corr
+    "@id": "#matches_astro_photo.ra_dec_corr"
+    datatype: float
+    description: ra_dec_corr
+    mysql:datatype: FLOAT
+  - name: ra_parallax_corr
+    "@id": "#matches_astro_photo.ra_parallax_corr"
+    datatype: float
+    description: ra_parallax_corr
+    mysql:datatype: FLOAT
+  - name: ra_pmra_corr
+    "@id": "#matches_astro_photo.ra_pmra_corr"
+    datatype: float
+    description: ra_pmra_corr
+    mysql:datatype: FLOAT
+  - name: ra_pmdec_corr
+    "@id": "#matches_astro_photo.ra_pmdec_corr"
+    datatype: float
+    description: ra_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: dec_parallax_corr
+    "@id": "#matches_astro_photo.dec_parallax_corr"
+    datatype: float
+    description: dec_parallax_corr
+    mysql:datatype: FLOAT
+  - name: dec_pmra_corr
+    "@id": "#matches_astro_photo.dec_pmra_corr"
+    datatype: float
+    description: dec_pmra_corr
+    mysql:datatype: FLOAT
+  - name: dec_pmdec_corr
+    "@id": "#matches_astro_photo.dec_pmdec_corr"
+    datatype: float
+    description: dec_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pmra_corr
+    "@id": "#matches_astro_photo.parallax_pmra_corr"
+    datatype: float
+    description: parallax_pmra_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pmdec_corr
+    "@id": "#matches_astro_photo.parallax_pmdec_corr"
+    datatype: float
+    description: parallax_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: pmra_pmdec_corr
+    "@id": "#matches_astro_photo.pmra_pmdec_corr"
+    datatype: float
+    description: pmra_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: astrometric_n_obs_al
+    "@id": "#matches_astro_photo.astrometric_n_obs_al"
+    datatype: short
+    description: astrometric_n_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_obs_ac
+    "@id": "#matches_astro_photo.astrometric_n_obs_ac"
+    datatype: short
+    description: astrometric_n_obs_ac
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_good_obs_al
+    "@id": "#matches_astro_photo.astrometric_n_good_obs_al"
+    datatype: short
+    description: astrometric_n_good_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_bad_obs_al
+    "@id": "#matches_astro_photo.astrometric_n_bad_obs_al"
+    datatype: short
+    description: astrometric_n_bad_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_gof_al
+    "@id": "#matches_astro_photo.astrometric_gof_al"
+    datatype: float
+    description: astrometric_gof_al
+    mysql:datatype: FLOAT
+  - name: astrometric_chi2_al
+    "@id": "#matches_astro_photo.astrometric_chi2_al"
+    datatype: float
+    description: astrometric_chi2_al
+    mysql:datatype: FLOAT
+  - name: astrometric_excess_noise
+    "@id": "#matches_astro_photo.astrometric_excess_noise"
+    datatype: float
+    description: astrometric_excess_noise
+    mysql:datatype: FLOAT
+  - name: astrometric_excess_noise_sig
+    "@id": "#matches_astro_photo.astrometric_excess_noise_sig"
+    datatype: float
+    description: astrometric_excess_noise_sig
+    mysql:datatype: FLOAT
+  - name: astrometric_params_solved
+    "@id": "#matches_astro_photo.astrometric_params_solved"
+    datatype: byte
+    description: astrometric_params_solved
+    mysql:datatype: TINYINT
+  - name: astrometric_primary_flag
+    "@id": "#matches_astro_photo.astrometric_primary_flag"
+    datatype: byte
+    description: astrometric_primary_flag
+    mysql:datatype: TINYINT
+  - name: nu_eff_used_in_astrometry
+    "@id": "#matches_astro_photo.nu_eff_used_in_astrometry"
+    datatype: float
+    description: nu_eff_used_in_astrometry
+    mysql:datatype: FLOAT
+  - name: pseudocolour
+    "@id": "#matches_astro_photo.pseudocolour"
+    datatype: float
+    description: pseudocolour
+    mysql:datatype: FLOAT
+  - name: pseudocolour_error
+    "@id": "#matches_astro_photo.pseudocolour_error"
+    datatype: float
+    description: pseudocolour_error
+    mysql:datatype: FLOAT
+  - name: ra_pseudocolour_corr
+    "@id": "#matches_astro_photo.ra_pseudocolour_corr"
+    datatype: float
+    description: ra_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: dec_pseudocolour_corr
+    "@id": "#matches_astro_photo.dec_pseudocolour_corr"
+    datatype: float
+    description: dec_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pseudocolour_corr
+    "@id": "#matches_astro_photo.parallax_pseudocolour_corr"
+    datatype: float
+    description: parallax_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: pmra_pseudocolour_corr
+    "@id": "#matches_astro_photo.pmra_pseudocolour_corr"
+    datatype: float
+    description: pmra_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: pmdec_pseudocolour_corr
+    "@id": "#matches_astro_photo.pmdec_pseudocolour_corr"
+    datatype: float
+    description: pmdec_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: astrometric_matched_transits
+    "@id": "#matches_astro_photo.astrometric_matched_transits"
+    datatype: short
+    description: astrometric_matched_transits
+    mysql:datatype: SMALLINT
+  - name: visibility_periods_used
+    "@id": "#matches_astro_photo.visibility_periods_used"
+    datatype: short
+    description: visibility_periods_used
+    mysql:datatype: SMALLINT
+  - name: astrometric_sigma5d_max
+    "@id": "#matches_astro_photo.astrometric_sigma5d_max"
+    datatype: float
+    description: astrometric_sigma5d_max
+    mysql:datatype: FLOAT
+  - name: matched_transits
+    "@id": "#matches_astro_photo.matched_transits"
+    datatype: short
+    description: matched_transits
+    mysql:datatype: SMALLINT
+  - name: new_matched_transits
+    "@id": "#matches_astro_photo.new_matched_transits"
+    datatype: short
+    description: new_matched_transits
+    mysql:datatype: SMALLINT
+  - name: matched_transits_removed
+    "@id": "#matches_astro_photo.matched_transits_removed"
+    datatype: short
+    description: matched_transits_removed
+    mysql:datatype: SMALLINT
+  - name: ipd_gof_harmonic_amplitude
+    "@id": "#matches_astro_photo.ipd_gof_harmonic_amplitude"
+    datatype: float
+    description: ipd_gof_harmonic_amplitude
+    mysql:datatype: FLOAT
+  - name: ipd_gof_harmonic_phase
+    "@id": "#matches_astro_photo.ipd_gof_harmonic_phase"
+    datatype: float
+    description: ipd_gof_harmonic_phase
+    mysql:datatype: FLOAT
+  - name: ipd_frac_multi_peak
+    "@id": "#matches_astro_photo.ipd_frac_multi_peak"
+    datatype: byte
+    description: ipd_frac_multi_peak
+    mysql:datatype: TINYINT
+  - name: ipd_frac_odd_win
+    "@id": "#matches_astro_photo.ipd_frac_odd_win"
+    datatype: byte
+    description: ipd_frac_odd_win
+    mysql:datatype: TINYINT
+  - name: ruwe
+    "@id": "#matches_astro_photo.ruwe"
+    datatype: float
+    description: ruwe
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k1
+    "@id": "#matches_astro_photo.scan_direction_strength_k1"
+    datatype: float
+    description: scan_direction_strength_k1
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k2
+    "@id": "#matches_astro_photo.scan_direction_strength_k2"
+    datatype: float
+    description: scan_direction_strength_k2
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k3
+    "@id": "#matches_astro_photo.scan_direction_strength_k3"
+    datatype: float
+    description: scan_direction_strength_k3
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k4
+    "@id": "#matches_astro_photo.scan_direction_strength_k4"
+    datatype: float
+    description: scan_direction_strength_k4
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k1
+    "@id": "#matches_astro_photo.scan_direction_mean_k1"
+    datatype: float
+    description: scan_direction_mean_k1
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k2
+    "@id": "#matches_astro_photo.scan_direction_mean_k2"
+    datatype: float
+    description: scan_direction_mean_k2
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k3
+    "@id": "#matches_astro_photo.scan_direction_mean_k3"
+    datatype: float
+    description: scan_direction_mean_k3
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k4
+    "@id": "#matches_astro_photo.scan_direction_mean_k4"
+    datatype: float
+    description: scan_direction_mean_k4
+    mysql:datatype: FLOAT
+  - name: duplicated_source
+    "@id": "#matches_astro_photo.duplicated_source"
+    datatype: byte
+    description: duplicated_source
+    mysql:datatype: TINYINT
+  - name: phot_g_n_obs
+    "@id": "#matches_astro_photo.phot_g_n_obs"
+    datatype: short
+    description: phot_g_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_g_mean_flux
+    "@id": "#matches_astro_photo.phot_g_mean_flux"
+    datatype: double
+    description: phot_g_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_g_mean_flux_error
+    "@id": "#matches_astro_photo.phot_g_mean_flux_error"
+    datatype: float
+    description: phot_g_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_g_mean_flux_over_error
+    "@id": "#matches_astro_photo.phot_g_mean_flux_over_error"
+    datatype: float
+    description: phot_g_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_g_mean_mag
+    "@id": "#matches_astro_photo.phot_g_mean_mag"
+    datatype: float
+    description: phot_g_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_bp_n_obs
+    "@id": "#matches_astro_photo.phot_bp_n_obs"
+    datatype: short
+    description: phot_bp_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_bp_mean_flux
+    "@id": "#matches_astro_photo.phot_bp_mean_flux"
+    datatype: double
+    description: phot_bp_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_bp_mean_flux_error
+    "@id": "#matches_astro_photo.phot_bp_mean_flux_error"
+    datatype: float
+    description: phot_bp_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_bp_mean_flux_over_error
+    "@id": "#matches_astro_photo.phot_bp_mean_flux_over_error"
+    datatype: float
+    description: phot_bp_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_bp_mean_mag
+    "@id": "#matches_astro_photo.phot_bp_mean_mag"
+    datatype: float
+    description: phot_bp_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_rp_n_obs
+    "@id": "#matches_astro_photo.phot_rp_n_obs"
+    datatype: short
+    description: phot_rp_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_rp_mean_flux
+    "@id": "#matches_astro_photo.phot_rp_mean_flux"
+    datatype: double
+    description: phot_rp_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_rp_mean_flux_error
+    "@id": "#matches_astro_photo.phot_rp_mean_flux_error"
+    datatype: float
+    description: phot_rp_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_rp_mean_flux_over_error
+    "@id": "#matches_astro_photo.phot_rp_mean_flux_over_error"
+    datatype: float
+    description: phot_rp_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_rp_mean_mag
+    "@id": "#matches_astro_photo.phot_rp_mean_mag"
+    datatype: float
+    description: phot_rp_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_bp_rp_excess_factor
+    "@id": "#matches_astro_photo.phot_bp_rp_excess_factor"
+    datatype: float
+    description: phot_bp_rp_excess_factor
+    mysql:datatype: FLOAT
+  - name: phot_bp_n_contaminated_transits
+    "@id": "#matches_astro_photo.phot_bp_n_contaminated_transits"
+    datatype: short
+    description: phot_bp_n_contaminated_transits
+    mysql:datatype: SMALLINT
+  - name: phot_bp_n_blended_transits
+    "@id": "#matches_astro_photo.phot_bp_n_blended_transits"
+    datatype: short
+    description: phot_bp_n_blended_transits
+    mysql:datatype: SMALLINT
+  - name: phot_rp_n_contaminated_transits
+    "@id": "#matches_astro_photo.phot_rp_n_contaminated_transits"
+    datatype: short
+    description: phot_rp_n_contaminated_transits
+    mysql:datatype: SMALLINT
+  - name: phot_rp_n_blended_transits
+    "@id": "#matches_astro_photo.phot_rp_n_blended_transits"
+    datatype: short
+    description: phot_rp_n_blended_transits
+    mysql:datatype: SMALLINT
+  - name: phot_proc_mode
+    "@id": "#matches_astro_photo.phot_proc_mode"
+    datatype: byte
+    description: phot_proc_mode
+    mysql:datatype: TINYINT
+  - name: bp_rp
+    "@id": "#matches_astro_photo.bp_rp"
+    datatype: float
+    description: bp_rp
+    mysql:datatype: FLOAT
+  - name: bp_g
+    "@id": "#matches_astro_photo.bp_g"
+    datatype: float
+    description: bp_g
+    mysql:datatype: FLOAT
+  - name: g_rp
+    "@id": "#matches_astro_photo.g_rp"
+    datatype: float
+    description: g_rp
+    mysql:datatype: FLOAT
+  - name: radial_velocity
+    "@id": "#matches_astro_photo.radial_velocity"
+    datatype: float
+    description: radial_velocity
+    mysql:datatype: FLOAT
+  - name: radial_velocity_error
+    "@id": "#matches_astro_photo.radial_velocity_error"
+    datatype: float
+    description: radial_velocity_error
+    mysql:datatype: FLOAT
+  - name: rv_method_used
+    "@id": "#matches_astro_photo.rv_method_used"
+    datatype: byte
+    description: rv_method_used
+    mysql:datatype: TINYINT
+  - name: rv_nb_transits
+    "@id": "#matches_astro_photo.rv_nb_transits"
+    datatype: short
+    description: rv_nb_transits
+    mysql:datatype: SMALLINT
+  - name: rv_nb_deblended_transits
+    "@id": "#matches_astro_photo.rv_nb_deblended_transits"
+    datatype: short
+    description: rv_nb_deblended_transits
+    mysql:datatype: SMALLINT
+  - name: rv_visibility_periods_used
+    "@id": "#matches_astro_photo.rv_visibility_periods_used"
+    datatype: short
+    description: rv_visibility_periods_used
+    mysql:datatype: SMALLINT
+  - name: rv_expected_sig_to_noise
+    "@id": "#matches_astro_photo.rv_expected_sig_to_noise"
+    datatype: float
+    description: rv_expected_sig_to_noise
+    mysql:datatype: FLOAT
+  - name: rv_renormalised_gof
+    "@id": "#matches_astro_photo.rv_renormalised_gof"
+    datatype: float
+    description: rv_renormalised_gof
+    mysql:datatype: FLOAT
+  - name: rv_chisq_pvalue
+    "@id": "#matches_astro_photo.rv_chisq_pvalue"
+    datatype: float
+    description: rv_chisq_pvalue
+    mysql:datatype: FLOAT
+  - name: rv_time_duration
+    "@id": "#matches_astro_photo.rv_time_duration"
+    datatype: float
+    description: rv_time_duration
+    mysql:datatype: FLOAT
+  - name: rv_amplitude_robust
+    "@id": "#matches_astro_photo.rv_amplitude_robust"
+    datatype: float
+    description: rv_amplitude_robust
+    mysql:datatype: FLOAT
+  - name: rv_template_teff
+    "@id": "#matches_astro_photo.rv_template_teff"
+    datatype: float
+    description: rv_template_teff
+    mysql:datatype: FLOAT
+  - name: rv_template_logg
+    "@id": "#matches_astro_photo.rv_template_logg"
+    datatype: float
+    description: rv_template_logg
+    mysql:datatype: FLOAT
+  - name: rv_template_fe_h
+    "@id": "#matches_astro_photo.rv_template_fe_h"
+    datatype: float
+    description: rv_template_fe_h
+    mysql:datatype: FLOAT
+  - name: rv_atm_param_origin
+    "@id": "#matches_astro_photo.rv_atm_param_origin"
+    datatype: short
+    description: rv_atm_param_origin
+    mysql:datatype: SMALLINT
+  - name: vbroad
+    "@id": "#matches_astro_photo.vbroad"
+    datatype: float
+    description: vbroad
+    mysql:datatype: FLOAT
+  - name: vbroad_error
+    "@id": "#matches_astro_photo.vbroad_error"
+    datatype: float
+    description: vbroad_error
+    mysql:datatype: FLOAT
+  - name: vbroad_nb_transits
+    "@id": "#matches_astro_photo.vbroad_nb_transits"
+    datatype: short
+    description: vbroad_nb_transits
+    mysql:datatype: SMALLINT
+  - name: grvs_mag
+    "@id": "#matches_astro_photo.grvs_mag"
+    datatype: float
+    description: grvs_mag
+    mysql:datatype: FLOAT
+  - name: grvs_mag_error
+    "@id": "#matches_astro_photo.grvs_mag_error"
+    datatype: float
+    description: grvs_mag_error
+    mysql:datatype: FLOAT
+  - name: grvs_mag_nb_transits
+    "@id": "#matches_astro_photo.grvs_mag_nb_transits"
+    datatype: short
+    description: grvs_mag_nb_transits
+    mysql:datatype: SMALLINT
+  - name: rvs_spec_sig_to_noise
+    "@id": "#matches_astro_photo.rvs_spec_sig_to_noise"
+    datatype: float
+    description: rvs_spec_sig_to_noise
+    mysql:datatype: FLOAT
+  - name: phot_variable_flag
+    "@id": "#matches_astro_photo.phot_variable_flag"
+    datatype: string
+    description: phot_variable_flag
+    length: 16
+    mysql:datatype: VARCHAR(16)
+  - name: l
+    "@id": "#matches_astro_photo.l"
+    datatype: double
+    description: l__
+    mysql:datatype: DOUBLE
+  - name: b
+    "@id": "#matches_astro_photo.b"
+    datatype: double
+    description: b__
+    mysql:datatype: DOUBLE
+  - name: ecl_lon
+    "@id": "#matches_astro_photo.ecl_lon"
+    datatype: double
+    description: ecl_lon
+    mysql:datatype: DOUBLE
+  - name: ecl_lat
+    "@id": "#matches_astro_photo.ecl_lat"
+    datatype: double
+    description: ecl_lat
+    mysql:datatype: DOUBLE
+  - name: in_qso_candidates
+    "@id": "#matches_astro_photo.in_qso_candidates"
+    datatype: byte
+    description: in_qso_candidates
+    mysql:datatype: TINYINT
+  - name: in_galaxy_candidates
+    "@id": "#matches_astro_photo.in_galaxy_candidates"
+    datatype: byte
+    description: in_galaxy_candidates
+    mysql:datatype: TINYINT
+  - name: non_single_star
+    "@id": "#matches_astro_photo.non_single_star"
+    datatype: short
+    description: non_single_star
+    mysql:datatype: SMALLINT
+  - name: has_xp_continuous
+    "@id": "#matches_astro_photo.has_xp_continuous"
+    datatype: byte
+    description: has_xp_continuous
+    mysql:datatype: TINYINT
+  - name: has_xp_sampled
+    "@id": "#matches_astro_photo.has_xp_sampled"
+    datatype: byte
+    description: has_xp_sampled
+    mysql:datatype: TINYINT
+  - name: has_rvs
+    "@id": "#matches_astro_photo.has_rvs"
+    datatype: byte
+    description: has_rvs
+    mysql:datatype: TINYINT
+  - name: has_epoch_photometry
+    "@id": "#matches_astro_photo.has_epoch_photometry"
+    datatype: byte
+    description: has_epoch_photometry
+    mysql:datatype: TINYINT
+  - name: has_epoch_rv
+    "@id": "#matches_astro_photo.has_epoch_rv"
+    datatype: byte
+    description: has_epoch_rv
+    mysql:datatype: TINYINT
+  - name: has_mcmc_gspphot
+    "@id": "#matches_astro_photo.has_mcmc_gspphot"
+    datatype: byte
+    description: has_mcmc_gspphot
+    mysql:datatype: TINYINT
+  - name: has_mcmc_msc
+    "@id": "#matches_astro_photo.has_mcmc_msc"
+    datatype: byte
+    description: has_mcmc_msc
+    mysql:datatype: TINYINT
+  - name: in_andromeda_survey
+    "@id": "#matches_astro_photo.in_andromeda_survey"
+    datatype: byte
+    description: in_andromeda_survey
+    mysql:datatype: TINYINT
+  - name: classprob_dsc_combmod_quasar
+    "@id": "#matches_astro_photo.classprob_dsc_combmod_quasar"
+    datatype: float
+    description: classprob_dsc_combmod_quasar
+    mysql:datatype: FLOAT
+  - name: classprob_dsc_combmod_galaxy
+    "@id": "#matches_astro_photo.classprob_dsc_combmod_galaxy"
+    datatype: float
+    description: classprob_dsc_combmod_galaxy
+    mysql:datatype: FLOAT
+  - name: classprob_dsc_combmod_star
+    "@id": "#matches_astro_photo.classprob_dsc_combmod_star"
+    datatype: float
+    description: classprob_dsc_combmod_star
+    mysql:datatype: FLOAT
+  - name: teff_gspphot
+    "@id": "#matches_astro_photo.teff_gspphot"
+    datatype: float
+    description: teff_gspphot
+    mysql:datatype: FLOAT
+  - name: teff_gspphot_lower
+    "@id": "#matches_astro_photo.teff_gspphot_lower"
+    datatype: float
+    description: teff_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: teff_gspphot_upper
+    "@id": "#matches_astro_photo.teff_gspphot_upper"
+    datatype: float
+    description: teff_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: logg_gspphot
+    "@id": "#matches_astro_photo.logg_gspphot"
+    datatype: float
+    description: logg_gspphot
+    mysql:datatype: FLOAT
+  - name: logg_gspphot_lower
+    "@id": "#matches_astro_photo.logg_gspphot_lower"
+    datatype: float
+    description: logg_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: logg_gspphot_upper
+    "@id": "#matches_astro_photo.logg_gspphot_upper"
+    datatype: float
+    description: logg_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: mh_gspphot
+    "@id": "#matches_astro_photo.mh_gspphot"
+    datatype: float
+    description: mh_gspphot
+    mysql:datatype: FLOAT
+  - name: mh_gspphot_lower
+    "@id": "#matches_astro_photo.mh_gspphot_lower"
+    datatype: float
+    description: mh_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: mh_gspphot_upper
+    "@id": "#matches_astro_photo.mh_gspphot_upper"
+    datatype: float
+    description: mh_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: distance_gspphot
+    "@id": "#matches_astro_photo.distance_gspphot"
+    datatype: float
+    description: distance_gspphot
+    mysql:datatype: FLOAT
+  - name: distance_gspphot_lower
+    "@id": "#matches_astro_photo.distance_gspphot_lower"
+    datatype: float
+    description: distance_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: distance_gspphot_upper
+    "@id": "#matches_astro_photo.distance_gspphot_upper"
+    datatype: float
+    description: distance_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: azero_gspphot
+    "@id": "#matches_astro_photo.azero_gspphot"
+    datatype: float
+    description: azero_gspphot
+    mysql:datatype: FLOAT
+  - name: azero_gspphot_lower
+    "@id": "#matches_astro_photo.azero_gspphot_lower"
+    datatype: float
+    description: azero_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: azero_gspphot_upper
+    "@id": "#matches_astro_photo.azero_gspphot_upper"
+    datatype: float
+    description: azero_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: ag_gspphot
+    "@id": "#matches_astro_photo.ag_gspphot"
+    datatype: float
+    description: ag_gspphot
+    mysql:datatype: FLOAT
+  - name: ag_gspphot_lower
+    "@id": "#matches_astro_photo.ag_gspphot_lower"
+    datatype: float
+    description: ag_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: ag_gspphot_upper
+    "@id": "#matches_astro_photo.ag_gspphot_upper"
+    datatype: float
+    description: ag_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot
+    "@id": "#matches_astro_photo.ebpminrp_gspphot"
+    datatype: float
+    description: ebpminrp_gspphot
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot_lower
+    "@id": "#matches_astro_photo.ebpminrp_gspphot_lower"
+    datatype: float
+    description: ebpminrp_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot_upper
+    "@id": "#matches_astro_photo.ebpminrp_gspphot_upper"
+    datatype: float
+    description: ebpminrp_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: libname_gspphot
+    "@id": "#matches_astro_photo.libname_gspphot"
+    datatype: string
+    description: libname_gspphot
+    length: 16
+    mysql:datatype: VARCHAR(16)
+  - name: cx
+    "@id": "#matches_astro_photo.cx"
+    datatype: double
+    description: cx_
+    mysql:datatype: DOUBLE
+  - name: cy
+    "@id": "#matches_astro_photo.cy"
+    datatype: double
+    description: cy_
+    mysql:datatype: DOUBLE
+  - name: cz
+    "@id": "#matches_astro_photo.cz"
+    datatype: double
+    description: cz_
+    mysql:datatype: DOUBLE
+  - name: htmID
+    "@id": "#matches_astro_photo.htmID"
+    datatype: long
+    description: htmID
+    mysql:datatype: BIGINT
+  - name: tra
+    "@id": "#matches_astro_photo.tra"
+    datatype: double
+    description: tra
+    mysql:datatype: DOUBLE
+  - name: tdec
+    "@id": "#matches_astro_photo.tdec"
+    datatype: double
+    description: tdec
+    mysql:datatype: DOUBLE
+  - name: err_maj
+    "@id": "#matches_astro_photo.err_maj"
+    datatype: float
+    description: err_maj
+    mysql:datatype: FLOAT
+  - name: err_min
+    "@id": "#matches_astro_photo.err_min"
+    datatype: float
+    description: err_min
+    mysql:datatype: FLOAT
+  - name: err_ang
+    "@id": "#matches_astro_photo.err_ang"
+    datatype: short
+    description: err_ang
+    mysql:datatype: SMALLINT
+  - name: tdesignation
+    "@id": "#matches_astro_photo.tdesignation"
+    datatype: string
+    description: tdesignation
+    length: 17
+    mysql:datatype: VARCHAR(17)
+  - name: j_m
+    "@id": "#matches_astro_photo.j_m"
+    datatype: float
+    description: j_m
+    mysql:datatype: FLOAT
+  - name: j_cmsig
+    "@id": "#matches_astro_photo.j_cmsig"
+    datatype: float
+    description: j_cmsig
+    mysql:datatype: FLOAT
+  - name: j_msigcom
+    "@id": "#matches_astro_photo.j_msigcom"
+    datatype: float
+    description: j_msigcom
+    mysql:datatype: FLOAT
+  - name: j_snr
+    "@id": "#matches_astro_photo.j_snr"
+    datatype: float
+    description: j_snr
+    mysql:datatype: FLOAT
+  - name: h_m
+    "@id": "#matches_astro_photo.h_m"
+    datatype: float
+    description: h_m
+    mysql:datatype: FLOAT
+  - name: h_cmsig
+    "@id": "#matches_astro_photo.h_cmsig"
+    datatype: float
+    description: h_cmsig
+    mysql:datatype: FLOAT
+  - name: h_msigcom
+    "@id": "#matches_astro_photo.h_msigcom"
+    datatype: float
+    description: h_msigcom
+    mysql:datatype: FLOAT
+  - name: h_snr
+    "@id": "#matches_astro_photo.h_snr"
+    datatype: float
+    description: h_snr
+    mysql:datatype: FLOAT
+  - name: k_m
+    "@id": "#matches_astro_photo.k_m"
+    datatype: float
+    description: k_m
+    mysql:datatype: FLOAT
+  - name: k_cmsig
+    "@id": "#matches_astro_photo.k_cmsig"
+    datatype: float
+    description: k_cmsig
+    mysql:datatype: FLOAT
+  - name: k_msigcom
+    "@id": "#matches_astro_photo.k_msigcom"
+    datatype: float
+    description: k_msigcom
+    mysql:datatype: FLOAT
+  - name: k_snr
+    "@id": "#matches_astro_photo.k_snr"
+    datatype: float
+    description: k_snr
+    mysql:datatype: FLOAT
+  - name: ph_qual
+    "@id": "#matches_astro_photo.ph_qual"
+    datatype: string
+    description: ph_qual
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: rd_flg
+    "@id": "#matches_astro_photo.rd_flg"
+    datatype: string
+    description: rd_flg
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: bl_flg
+    "@id": "#matches_astro_photo.bl_flg"
+    datatype: string
+    description: bl_flg
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: cc_flg
+    "@id": "#matches_astro_photo.cc_flg"
+    datatype: string
+    description: cc_flg
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: ndet
+    "@id": "#matches_astro_photo.ndet"
+    datatype: string
+    description: ndet
+    length: 6
+    mysql:datatype: VARCHAR(6)
+  - name: prox
+    "@id": "#matches_astro_photo.prox"
+    datatype: float
+    description: prox
+    mysql:datatype: FLOAT
+  - name: pxpa
+    "@id": "#matches_astro_photo.pxpa"
+    datatype: short
+    description: pxpa
+    mysql:datatype: SMALLINT
+  - name: pxcntr
+    "@id": "#matches_astro_photo.pxcntr"
+    datatype: int
+    description: pxcntr
+    mysql:datatype: INT
+  - name: gal_contam
+    "@id": "#matches_astro_photo.gal_contam"
+    datatype: short
+    description: gal_contam
+    mysql:datatype: SMALLINT
+  - name: mp_flg
+    "@id": "#matches_astro_photo.mp_flg"
+    datatype: short
+    description: mp_flg
+    mysql:datatype: SMALLINT
+  - name: pts_key
+    "@id": "#matches_astro_photo.pts_key"
+    datatype: int
+    description: pts_key
+    mysql:datatype: INT
+  - name: hemis
+    "@id": "#matches_astro_photo.hemis"
+    datatype: string
+    description: hemis
+    length: 1
+    mysql:datatype: VARCHAR(1)
+  - name: tdate
+    "@id": "#matches_astro_photo.tdate"
+    datatype: timestamp
+    description: tdate
+    mysql:datatype: DATETIME
+  - name: scan
+    "@id": "#matches_astro_photo.scan"
+    datatype: short
+    description: scan
+    mysql:datatype: SMALLINT
+  - name: glon
+    "@id": "#matches_astro_photo.glon"
+    datatype: float
+    description: glon
+    mysql:datatype: FLOAT
+  - name: glat
+    "@id": "#matches_astro_photo.glat"
+    datatype: float
+    description: glat
+    mysql:datatype: FLOAT
+  - name: x_scan
+    "@id": "#matches_astro_photo.x_scan"
+    datatype: float
+    description: x_scan
+    mysql:datatype: FLOAT
+  - name: jdate
+    "@id": "#matches_astro_photo.jdate"
+    datatype: double
+    description: jdate
+    mysql:datatype: DOUBLE
+  - name: j_psfchi
+    "@id": "#matches_astro_photo.j_psfchi"
+    datatype: float
+    description: j_psfchi
+    mysql:datatype: FLOAT
+  - name: h_psfchi
+    "@id": "#matches_astro_photo.h_psfchi"
+    datatype: float
+    description: h_psfchi
+    mysql:datatype: FLOAT
+  - name: k_psfchi
+    "@id": "#matches_astro_photo.k_psfchi"
+    datatype: float
+    description: k_psfchi
+    mysql:datatype: FLOAT
+  - name: j_m_stdap
+    "@id": "#matches_astro_photo.j_m_stdap"
+    datatype: float
+    description: j_m_stdap
+    mysql:datatype: FLOAT
+  - name: j_msig_stdap
+    "@id": "#matches_astro_photo.j_msig_stdap"
+    datatype: float
+    description: j_msig_stdap
+    mysql:datatype: FLOAT
+  - name: h_m_stdap
+    "@id": "#matches_astro_photo.h_m_stdap"
+    datatype: float
+    description: h_m_stdap
+    mysql:datatype: FLOAT
+  - name: h_msig_stdap
+    "@id": "#matches_astro_photo.h_msig_stdap"
+    datatype: float
+    description: h_msig_stdap
+    mysql:datatype: FLOAT
+  - name: k_m_stdap
+    "@id": "#matches_astro_photo.k_m_stdap"
+    datatype: float
+    description: k_m_stdap
+    mysql:datatype: FLOAT
+  - name: k_msig_stdap
+    "@id": "#matches_astro_photo.k_msig_stdap"
+    datatype: float
+    description: k_msig_stdap
+    mysql:datatype: FLOAT
+  - name: dist_edge_ns
+    "@id": "#matches_astro_photo.dist_edge_ns"
+    datatype: int
+    description: dist_edge_ns
+    mysql:datatype: INT
+  - name: dist_edge_ew
+    "@id": "#matches_astro_photo.dist_edge_ew"
+    datatype: int
+    description: dist_edge_ew
+    mysql:datatype: INT
+  - name: dist_edge_flg
+    "@id": "#matches_astro_photo.dist_edge_flg"
+    datatype: string
+    description: dist_edge_flg
+    length: 2
+    mysql:datatype: VARCHAR(2)
+  - name: dup_src
+    "@id": "#matches_astro_photo.dup_src"
+    datatype: short
+    description: dup_src
+    mysql:datatype: SMALLINT
+  - name: use_src
+    "@id": "#matches_astro_photo.use_src"
+    datatype: short
+    description: use_src
+    mysql:datatype: SMALLINT
+  - name: a
+    "@id": "#matches_astro_photo.a"
+    datatype: string
+    description: a__
+    length: 1
+    mysql:datatype: VARCHAR(1)
+  - name: dist_opt
+    "@id": "#matches_astro_photo.dist_opt"
+    datatype: float
+    description: dist_opt
+    mysql:datatype: FLOAT
+  - name: phi_opt
+    "@id": "#matches_astro_photo.phi_opt"
+    datatype: short
+    description: phi_opt
+    mysql:datatype: SMALLINT
+  - name: b_m_opt
+    "@id": "#matches_astro_photo.b_m_opt"
+    datatype: float
+    description: b_m_opt
+    mysql:datatype: FLOAT
+  - name: vr_m_opt
+    "@id": "#matches_astro_photo.vr_m_opt"
+    datatype: float
+    description: vr_m_opt
+    mysql:datatype: FLOAT
+  - name: nopt_mchs
+    "@id": "#matches_astro_photo.nopt_mchs"
+    datatype: short
+    description: nopt_mchs
+    mysql:datatype: SMALLINT
+  - name: ext_key
+    "@id": "#matches_astro_photo.ext_key"
+    datatype: int
+    description: ext_key
+    mysql:datatype: INT
+  - name: scan_key
+    "@id": "#matches_astro_photo.scan_key"
+    datatype: int
+    description: scan_key
+    mysql:datatype: INT
+  - name: coadd_key
+    "@id": "#matches_astro_photo.coadd_key"
+    datatype: int
+    description: coadd_key
+    mysql:datatype: INT
+  - name: coadd
+    "@id": "#matches_astro_photo.coadd"
+    datatype: short
+    description: coadd
+    mysql:datatype: SMALLINT
+  - name: chunkId
+    "@id": "#matches_astro_photo.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#matches_astro_photo.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
+- name: matches_astro_only
+  "@id": "#matches_astro_only"
+  description: Counterpart associations between Gaia and 2MASS PSC, as well as derived values from the cross-match process such as match probability and contamination flux
+  columns:
+  - name: gaia_source_id
+    "@id": "#matches_astro_only.gaia_source_id"
+    datatype: long
+    description: The Gaia DR3 source ID
+    mysql:datatype: BIGINT
+  - name: gaia_designation
+    "@id": "#matches_astro_only.gaia_designation"
+    datatype: string
+    description: The Gaia DR3 object designation.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: gaia_ra
+    "@id": "#matches_astro_only.gaia_ra"
+    datatype: double
+    description: Right Ascension of the Gaia DR3 source.
+    mysql:datatype: DOUBLE
+  - name: gaia_dec
+    "@id": "#matches_astro_only.gaia_dec"
+    datatype: double
+    description: The Gaia DR3 declination.
+    mysql:datatype: DOUBLE
+  - name: bp
+    "@id": "#matches_astro_only.bp"
+    datatype: float
+    description: The BP magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: g
+    "@id": "#matches_astro_only.g"
+    datatype: float
+    description: The Gaia DR3 G magnitude.
+    mysql:datatype: FLOAT
+  - name: rp
+    "@id": "#matches_astro_only.rp"
+    datatype: float
+    description: The Gaia DR3 RP magnitude.
+    mysql:datatype: FLOAT
+  - name: twomass_name
+    "@id": "#matches_astro_only.twomass_name"
+    datatype: string
+    description: The object identifier from the 2MASS catalogue, both the PSC and the XSC.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: twomass_ra
+    "@id": "#matches_astro_only.twomass_ra"
+    datatype: double
+    description: Right Ascension of the object as quoted by the 2MASS catalogue.
+    mysql:datatype: DOUBLE
+  - name: twomass_dec
+    "@id": "#matches_astro_only.twomass_dec"
+    datatype: double
+    description: 2MASS Declination.
+    mysql:datatype: DOUBLE
+  - name: j
+    "@id": "#matches_astro_only.j"
+    datatype: float
+    description: J magnitude from 2MASS.
+    mysql:datatype: FLOAT
+  - name: h
+    "@id": "#matches_astro_only.h"
+    datatype: float
+    description: H magnitude from 2MASS.
+    mysql:datatype: FLOAT
+  - name: k
+    "@id": "#matches_astro_only.k"
+    datatype: float
+    description: K magnitude from 2MASS.
+    mysql:datatype: FLOAT
+  - name: twomass_key
+    "@id": "#matches_astro_only.twomass_key"
+    datatype: long
+    description: The pts_key column from the 2MASS PSC catalogue, or minus the ext_key column from the 2MASS XSC catalogue.
+    mysql:datatype: BIGINT
+  - name: match_p
+    "@id": "#matches_astro_only.match_p"
+    datatype: double
+    description: Overall probability that the Gaia DR3 and 2MASS sources are detections of the same object, as given by equation 26 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: separation
+    "@id": "#matches_astro_only.separation"
+    datatype: double
+    description: On-sky distance between the two detections, in arcseconds.
+    mysql:datatype: DOUBLE
+  - name: eta
+    "@id": "#matches_astro_only.eta"
+    datatype: double
+    description: Photometric logarithmic likelihood ratio of Gaia DR3-2MASS match, as described by equation 37 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: xi
+    "@id": "#matches_astro_only.xi"
+    datatype: double
+    description: Astrometric logarithmic likelihood ratio of Gaia DR3-2MASS match, as described by equation 38 of Wilson & Naylor (2018a)
+    mysql:datatype: DOUBLE
+  - name: gaia_avg_cont
+    "@id": "#matches_astro_only.gaia_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated Gaia PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source.
+    mysql:datatype: DOUBLE
+  - name: twomass_avg_cont
+    "@id": "#matches_astro_only.twomass_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated 2MASS PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source.
+    mysql:datatype: DOUBLE
+  - name: gaia_cont_f1
+    "@id": "#matches_astro_only.gaia_cont_f1"
+    datatype: double
+    description: Probability of Gaia source having contaminant of at least 1% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: gaia_cont_f10
+    "@id": "#matches_astro_only.gaia_cont_f10"
+    datatype: double
+    description: Probability of Gaia source having contaminant of at least 10% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: twomass_cont_f1
+    "@id": "#matches_astro_only.twomass_cont_f1"
+    datatype: double
+    description: Probability of 2MASS source having contaminant of at least 1% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: twomass_cont_f10
+    "@id": "#matches_astro_only.twomass_cont_f10"
+    datatype: double
+    description: Probability of 2MASS source having contaminant of at least 10% relative flux given its separation from its corresponding Gaia detection, as given by equation 12 of Wilson & Naylor (2018b).
+    mysql:datatype: DOUBLE
+  - name: solution_id
+    "@id": "#matches_astro_only.solution_id"
+    datatype: long
+    description: solution_id
+    mysql:datatype: BIGINT
+  - name: designation
+    "@id": "#matches_astro_only.designation"
+    datatype: string
+    description: designation
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: source_id
+    "@id": "#matches_astro_only.source_id"
+    datatype: long
+    description: source_id
+    mysql:datatype: BIGINT
+  - name: random_index
+    "@id": "#matches_astro_only.random_index"
+    datatype: long
+    description: random_index
+    mysql:datatype: BIGINT
+  - name: ref_epoch
+    "@id": "#matches_astro_only.ref_epoch"
+    datatype: float
+    description: ref_epoch
+    mysql:datatype: FLOAT
+  - name: ra
+    "@id": "#matches_astro_only.ra"
+    datatype: double
+    description: ra_
+    mysql:datatype: DOUBLE
+  - name: ra_error
+    "@id": "#matches_astro_only.ra_error"
+    datatype: float
+    description: ra_error
+    mysql:datatype: FLOAT
+  - name: dec
+    "@id": "#matches_astro_only.dec"
+    datatype: double
+    description: dec
+    mysql:datatype: DOUBLE
+  - name: dec_error
+    "@id": "#matches_astro_only.dec_error"
+    datatype: float
+    description: dec_error
+    mysql:datatype: FLOAT
+  - name: parallax
+    "@id": "#matches_astro_only.parallax"
+    datatype: double
+    description: parallax
+    mysql:datatype: DOUBLE
+  - name: parallax_error
+    "@id": "#matches_astro_only.parallax_error"
+    datatype: float
+    description: parallax_error
+    mysql:datatype: FLOAT
+  - name: parallax_over_error
+    "@id": "#matches_astro_only.parallax_over_error"
+    datatype: float
+    description: parallax_over_error
+    mysql:datatype: FLOAT
+  - name: pm
+    "@id": "#matches_astro_only.pm"
+    datatype: float
+    description: pm_
+    mysql:datatype: FLOAT
+  - name: pmra
+    "@id": "#matches_astro_only.pmra"
+    datatype: double
+    description: pmra
+    mysql:datatype: DOUBLE
+  - name: pmra_error
+    "@id": "#matches_astro_only.pmra_error"
+    datatype: float
+    description: pmra_error
+    mysql:datatype: FLOAT
+  - name: pmdec
+    "@id": "#matches_astro_only.pmdec"
+    datatype: double
+    description: pmdec
+    mysql:datatype: DOUBLE
+  - name: pmdec_error
+    "@id": "#matches_astro_only.pmdec_error"
+    datatype: float
+    description: pmdec_error
+    mysql:datatype: FLOAT
+  - name: ra_dec_corr
+    "@id": "#matches_astro_only.ra_dec_corr"
+    datatype: float
+    description: ra_dec_corr
+    mysql:datatype: FLOAT
+  - name: ra_parallax_corr
+    "@id": "#matches_astro_only.ra_parallax_corr"
+    datatype: float
+    description: ra_parallax_corr
+    mysql:datatype: FLOAT
+  - name: ra_pmra_corr
+    "@id": "#matches_astro_only.ra_pmra_corr"
+    datatype: float
+    description: ra_pmra_corr
+    mysql:datatype: FLOAT
+  - name: ra_pmdec_corr
+    "@id": "#matches_astro_only.ra_pmdec_corr"
+    datatype: float
+    description: ra_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: dec_parallax_corr
+    "@id": "#matches_astro_only.dec_parallax_corr"
+    datatype: float
+    description: dec_parallax_corr
+    mysql:datatype: FLOAT
+  - name: dec_pmra_corr
+    "@id": "#matches_astro_only.dec_pmra_corr"
+    datatype: float
+    description: dec_pmra_corr
+    mysql:datatype: FLOAT
+  - name: dec_pmdec_corr
+    "@id": "#matches_astro_only.dec_pmdec_corr"
+    datatype: float
+    description: dec_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pmra_corr
+    "@id": "#matches_astro_only.parallax_pmra_corr"
+    datatype: float
+    description: parallax_pmra_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pmdec_corr
+    "@id": "#matches_astro_only.parallax_pmdec_corr"
+    datatype: float
+    description: parallax_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: pmra_pmdec_corr
+    "@id": "#matches_astro_only.pmra_pmdec_corr"
+    datatype: float
+    description: pmra_pmdec_corr
+    mysql:datatype: FLOAT
+  - name: astrometric_n_obs_al
+    "@id": "#matches_astro_only.astrometric_n_obs_al"
+    datatype: short
+    description: astrometric_n_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_obs_ac
+    "@id": "#matches_astro_only.astrometric_n_obs_ac"
+    datatype: short
+    description: astrometric_n_obs_ac
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_good_obs_al
+    "@id": "#matches_astro_only.astrometric_n_good_obs_al"
+    datatype: short
+    description: astrometric_n_good_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_n_bad_obs_al
+    "@id": "#matches_astro_only.astrometric_n_bad_obs_al"
+    datatype: short
+    description: astrometric_n_bad_obs_al
+    mysql:datatype: SMALLINT
+  - name: astrometric_gof_al
+    "@id": "#matches_astro_only.astrometric_gof_al"
+    datatype: float
+    description: astrometric_gof_al
+    mysql:datatype: FLOAT
+  - name: astrometric_chi2_al
+    "@id": "#matches_astro_only.astrometric_chi2_al"
+    datatype: float
+    description: astrometric_chi2_al
+    mysql:datatype: FLOAT
+  - name: astrometric_excess_noise
+    "@id": "#matches_astro_only.astrometric_excess_noise"
+    datatype: float
+    description: astrometric_excess_noise
+    mysql:datatype: FLOAT
+  - name: astrometric_excess_noise_sig
+    "@id": "#matches_astro_only.astrometric_excess_noise_sig"
+    datatype: float
+    description: astrometric_excess_noise_sig
+    mysql:datatype: FLOAT
+  - name: astrometric_params_solved
+    "@id": "#matches_astro_only.astrometric_params_solved"
+    datatype: byte
+    description: astrometric_params_solved
+    mysql:datatype: TINYINT
+  - name: astrometric_primary_flag
+    "@id": "#matches_astro_only.astrometric_primary_flag"
+    datatype: byte
+    description: astrometric_primary_flag
+    mysql:datatype: TINYINT
+  - name: nu_eff_used_in_astrometry
+    "@id": "#matches_astro_only.nu_eff_used_in_astrometry"
+    datatype: float
+    description: nu_eff_used_in_astrometry
+    mysql:datatype: FLOAT
+  - name: pseudocolour
+    "@id": "#matches_astro_only.pseudocolour"
+    datatype: float
+    description: pseudocolour
+    mysql:datatype: FLOAT
+  - name: pseudocolour_error
+    "@id": "#matches_astro_only.pseudocolour_error"
+    datatype: float
+    description: pseudocolour_error
+    mysql:datatype: FLOAT
+  - name: ra_pseudocolour_corr
+    "@id": "#matches_astro_only.ra_pseudocolour_corr"
+    datatype: float
+    description: ra_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: dec_pseudocolour_corr
+    "@id": "#matches_astro_only.dec_pseudocolour_corr"
+    datatype: float
+    description: dec_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: parallax_pseudocolour_corr
+    "@id": "#matches_astro_only.parallax_pseudocolour_corr"
+    datatype: float
+    description: parallax_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: pmra_pseudocolour_corr
+    "@id": "#matches_astro_only.pmra_pseudocolour_corr"
+    datatype: float
+    description: pmra_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: pmdec_pseudocolour_corr
+    "@id": "#matches_astro_only.pmdec_pseudocolour_corr"
+    datatype: float
+    description: pmdec_pseudocolour_corr
+    mysql:datatype: FLOAT
+  - name: astrometric_matched_transits
+    "@id": "#matches_astro_only.astrometric_matched_transits"
+    datatype: short
+    description: astrometric_matched_transits
+    mysql:datatype: SMALLINT
+  - name: visibility_periods_used
+    "@id": "#matches_astro_only.visibility_periods_used"
+    datatype: short
+    description: visibility_periods_used
+    mysql:datatype: SMALLINT
+  - name: astrometric_sigma5d_max
+    "@id": "#matches_astro_only.astrometric_sigma5d_max"
+    datatype: float
+    description: astrometric_sigma5d_max
+    mysql:datatype: FLOAT
+  - name: matched_transits
+    "@id": "#matches_astro_only.matched_transits"
+    datatype: short
+    description: matched_transits
+    mysql:datatype: SMALLINT
+  - name: new_matched_transits
+    "@id": "#matches_astro_only.new_matched_transits"
+    datatype: short
+    description: new_matched_transits
+    mysql:datatype: SMALLINT
+  - name: matched_transits_removed
+    "@id": "#matches_astro_only.matched_transits_removed"
+    datatype: short
+    description: matched_transits_removed
+    mysql:datatype: SMALLINT
+  - name: ipd_gof_harmonic_amplitude
+    "@id": "#matches_astro_only.ipd_gof_harmonic_amplitude"
+    datatype: float
+    description: ipd_gof_harmonic_amplitude
+    mysql:datatype: FLOAT
+  - name: ipd_gof_harmonic_phase
+    "@id": "#matches_astro_only.ipd_gof_harmonic_phase"
+    datatype: float
+    description: ipd_gof_harmonic_phase
+    mysql:datatype: FLOAT
+  - name: ipd_frac_multi_peak
+    "@id": "#matches_astro_only.ipd_frac_multi_peak"
+    datatype: byte
+    description: ipd_frac_multi_peak
+    mysql:datatype: TINYINT
+  - name: ipd_frac_odd_win
+    "@id": "#matches_astro_only.ipd_frac_odd_win"
+    datatype: byte
+    description: ipd_frac_odd_win
+    mysql:datatype: TINYINT
+  - name: ruwe
+    "@id": "#matches_astro_only.ruwe"
+    datatype: float
+    description: ruwe
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k1
+    "@id": "#matches_astro_only.scan_direction_strength_k1"
+    datatype: float
+    description: scan_direction_strength_k1
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k2
+    "@id": "#matches_astro_only.scan_direction_strength_k2"
+    datatype: float
+    description: scan_direction_strength_k2
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k3
+    "@id": "#matches_astro_only.scan_direction_strength_k3"
+    datatype: float
+    description: scan_direction_strength_k3
+    mysql:datatype: FLOAT
+  - name: scan_direction_strength_k4
+    "@id": "#matches_astro_only.scan_direction_strength_k4"
+    datatype: float
+    description: scan_direction_strength_k4
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k1
+    "@id": "#matches_astro_only.scan_direction_mean_k1"
+    datatype: float
+    description: scan_direction_mean_k1
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k2
+    "@id": "#matches_astro_only.scan_direction_mean_k2"
+    datatype: float
+    description: scan_direction_mean_k2
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k3
+    "@id": "#matches_astro_only.scan_direction_mean_k3"
+    datatype: float
+    description: scan_direction_mean_k3
+    mysql:datatype: FLOAT
+  - name: scan_direction_mean_k4
+    "@id": "#matches_astro_only.scan_direction_mean_k4"
+    datatype: float
+    description: scan_direction_mean_k4
+    mysql:datatype: FLOAT
+  - name: duplicated_source
+    "@id": "#matches_astro_only.duplicated_source"
+    datatype: byte
+    description: duplicated_source
+    mysql:datatype: TINYINT
+  - name: phot_g_n_obs
+    "@id": "#matches_astro_only.phot_g_n_obs"
+    datatype: short
+    description: phot_g_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_g_mean_flux
+    "@id": "#matches_astro_only.phot_g_mean_flux"
+    datatype: double
+    description: phot_g_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_g_mean_flux_error
+    "@id": "#matches_astro_only.phot_g_mean_flux_error"
+    datatype: float
+    description: phot_g_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_g_mean_flux_over_error
+    "@id": "#matches_astro_only.phot_g_mean_flux_over_error"
+    datatype: float
+    description: phot_g_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_g_mean_mag
+    "@id": "#matches_astro_only.phot_g_mean_mag"
+    datatype: float
+    description: phot_g_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_bp_n_obs
+    "@id": "#matches_astro_only.phot_bp_n_obs"
+    datatype: short
+    description: phot_bp_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_bp_mean_flux
+    "@id": "#matches_astro_only.phot_bp_mean_flux"
+    datatype: double
+    description: phot_bp_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_bp_mean_flux_error
+    "@id": "#matches_astro_only.phot_bp_mean_flux_error"
+    datatype: float
+    description: phot_bp_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_bp_mean_flux_over_error
+    "@id": "#matches_astro_only.phot_bp_mean_flux_over_error"
+    datatype: float
+    description: phot_bp_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_bp_mean_mag
+    "@id": "#matches_astro_only.phot_bp_mean_mag"
+    datatype: float
+    description: phot_bp_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_rp_n_obs
+    "@id": "#matches_astro_only.phot_rp_n_obs"
+    datatype: short
+    description: phot_rp_n_obs
+    mysql:datatype: SMALLINT
+  - name: phot_rp_mean_flux
+    "@id": "#matches_astro_only.phot_rp_mean_flux"
+    datatype: double
+    description: phot_rp_mean_flux
+    mysql:datatype: DOUBLE
+  - name: phot_rp_mean_flux_error
+    "@id": "#matches_astro_only.phot_rp_mean_flux_error"
+    datatype: float
+    description: phot_rp_mean_flux_error
+    mysql:datatype: FLOAT
+  - name: phot_rp_mean_flux_over_error
+    "@id": "#matches_astro_only.phot_rp_mean_flux_over_error"
+    datatype: float
+    description: phot_rp_mean_flux_over_error
+    mysql:datatype: FLOAT
+  - name: phot_rp_mean_mag
+    "@id": "#matches_astro_only.phot_rp_mean_mag"
+    datatype: float
+    description: phot_rp_mean_mag
+    mysql:datatype: FLOAT
+  - name: phot_bp_rp_excess_factor
+    "@id": "#matches_astro_only.phot_bp_rp_excess_factor"
+    datatype: float
+    description: phot_bp_rp_excess_factor
+    mysql:datatype: FLOAT
+  - name: phot_bp_n_contaminated_transits
+    "@id": "#matches_astro_only.phot_bp_n_contaminated_transits"
+    datatype: short
+    description: phot_bp_n_contaminated_transits
+    mysql:datatype: SMALLINT
+  - name: phot_bp_n_blended_transits
+    "@id": "#matches_astro_only.phot_bp_n_blended_transits"
+    datatype: short
+    description: phot_bp_n_blended_transits
+    mysql:datatype: SMALLINT
+  - name: phot_rp_n_contaminated_transits
+    "@id": "#matches_astro_only.phot_rp_n_contaminated_transits"
+    datatype: short
+    description: phot_rp_n_contaminated_transits
+    mysql:datatype: SMALLINT
+  - name: phot_rp_n_blended_transits
+    "@id": "#matches_astro_only.phot_rp_n_blended_transits"
+    datatype: short
+    description: phot_rp_n_blended_transits
+    mysql:datatype: SMALLINT
+  - name: phot_proc_mode
+    "@id": "#matches_astro_only.phot_proc_mode"
+    datatype: byte
+    description: phot_proc_mode
+    mysql:datatype: TINYINT
+  - name: bp_rp
+    "@id": "#matches_astro_only.bp_rp"
+    datatype: float
+    description: bp_rp
+    mysql:datatype: FLOAT
+  - name: bp_g
+    "@id": "#matches_astro_only.bp_g"
+    datatype: float
+    description: bp_g
+    mysql:datatype: FLOAT
+  - name: g_rp
+    "@id": "#matches_astro_only.g_rp"
+    datatype: float
+    description: g_rp
+    mysql:datatype: FLOAT
+  - name: radial_velocity
+    "@id": "#matches_astro_only.radial_velocity"
+    datatype: float
+    description: radial_velocity
+    mysql:datatype: FLOAT
+  - name: radial_velocity_error
+    "@id": "#matches_astro_only.radial_velocity_error"
+    datatype: float
+    description: radial_velocity_error
+    mysql:datatype: FLOAT
+  - name: rv_method_used
+    "@id": "#matches_astro_only.rv_method_used"
+    datatype: byte
+    description: rv_method_used
+    mysql:datatype: TINYINT
+  - name: rv_nb_transits
+    "@id": "#matches_astro_only.rv_nb_transits"
+    datatype: short
+    description: rv_nb_transits
+    mysql:datatype: SMALLINT
+  - name: rv_nb_deblended_transits
+    "@id": "#matches_astro_only.rv_nb_deblended_transits"
+    datatype: short
+    description: rv_nb_deblended_transits
+    mysql:datatype: SMALLINT
+  - name: rv_visibility_periods_used
+    "@id": "#matches_astro_only.rv_visibility_periods_used"
+    datatype: short
+    description: rv_visibility_periods_used
+    mysql:datatype: SMALLINT
+  - name: rv_expected_sig_to_noise
+    "@id": "#matches_astro_only.rv_expected_sig_to_noise"
+    datatype: float
+    description: rv_expected_sig_to_noise
+    mysql:datatype: FLOAT
+  - name: rv_renormalised_gof
+    "@id": "#matches_astro_only.rv_renormalised_gof"
+    datatype: float
+    description: rv_renormalised_gof
+    mysql:datatype: FLOAT
+  - name: rv_chisq_pvalue
+    "@id": "#matches_astro_only.rv_chisq_pvalue"
+    datatype: float
+    description: rv_chisq_pvalue
+    mysql:datatype: FLOAT
+  - name: rv_time_duration
+    "@id": "#matches_astro_only.rv_time_duration"
+    datatype: float
+    description: rv_time_duration
+    mysql:datatype: FLOAT
+  - name: rv_amplitude_robust
+    "@id": "#matches_astro_only.rv_amplitude_robust"
+    datatype: float
+    description: rv_amplitude_robust
+    mysql:datatype: FLOAT
+  - name: rv_template_teff
+    "@id": "#matches_astro_only.rv_template_teff"
+    datatype: float
+    description: rv_template_teff
+    mysql:datatype: FLOAT
+  - name: rv_template_logg
+    "@id": "#matches_astro_only.rv_template_logg"
+    datatype: float
+    description: rv_template_logg
+    mysql:datatype: FLOAT
+  - name: rv_template_fe_h
+    "@id": "#matches_astro_only.rv_template_fe_h"
+    datatype: float
+    description: rv_template_fe_h
+    mysql:datatype: FLOAT
+  - name: rv_atm_param_origin
+    "@id": "#matches_astro_only.rv_atm_param_origin"
+    datatype: short
+    description: rv_atm_param_origin
+    mysql:datatype: SMALLINT
+  - name: vbroad
+    "@id": "#matches_astro_only.vbroad"
+    datatype: float
+    description: vbroad
+    mysql:datatype: FLOAT
+  - name: vbroad_error
+    "@id": "#matches_astro_only.vbroad_error"
+    datatype: float
+    description: vbroad_error
+    mysql:datatype: FLOAT
+  - name: vbroad_nb_transits
+    "@id": "#matches_astro_only.vbroad_nb_transits"
+    datatype: short
+    description: vbroad_nb_transits
+    mysql:datatype: SMALLINT
+  - name: grvs_mag
+    "@id": "#matches_astro_only.grvs_mag"
+    datatype: float
+    description: grvs_mag
+    mysql:datatype: FLOAT
+  - name: grvs_mag_error
+    "@id": "#matches_astro_only.grvs_mag_error"
+    datatype: float
+    description: grvs_mag_error
+    mysql:datatype: FLOAT
+  - name: grvs_mag_nb_transits
+    "@id": "#matches_astro_only.grvs_mag_nb_transits"
+    datatype: short
+    description: grvs_mag_nb_transits
+    mysql:datatype: SMALLINT
+  - name: rvs_spec_sig_to_noise
+    "@id": "#matches_astro_only.rvs_spec_sig_to_noise"
+    datatype: float
+    description: rvs_spec_sig_to_noise
+    mysql:datatype: FLOAT
+  - name: phot_variable_flag
+    "@id": "#matches_astro_only.phot_variable_flag"
+    datatype: string
+    description: phot_variable_flag
+    length: 16
+    mysql:datatype: VARCHAR(16)
+  - name: l
+    "@id": "#matches_astro_only.l"
+    datatype: double
+    description: l__
+    mysql:datatype: DOUBLE
+  - name: b
+    "@id": "#matches_astro_only.b"
+    datatype: double
+    description: b__
+    mysql:datatype: DOUBLE
+  - name: ecl_lon
+    "@id": "#matches_astro_only.ecl_lon"
+    datatype: double
+    description: ecl_lon
+    mysql:datatype: DOUBLE
+  - name: ecl_lat
+    "@id": "#matches_astro_only.ecl_lat"
+    datatype: double
+    description: ecl_lat
+    mysql:datatype: DOUBLE
+  - name: in_qso_candidates
+    "@id": "#matches_astro_only.in_qso_candidates"
+    datatype: byte
+    description: in_qso_candidates
+    mysql:datatype: TINYINT
+  - name: in_galaxy_candidates
+    "@id": "#matches_astro_only.in_galaxy_candidates"
+    datatype: byte
+    description: in_galaxy_candidates
+    mysql:datatype: TINYINT
+  - name: non_single_star
+    "@id": "#matches_astro_only.non_single_star"
+    datatype: short
+    description: non_single_star
+    mysql:datatype: SMALLINT
+  - name: has_xp_continuous
+    "@id": "#matches_astro_only.has_xp_continuous"
+    datatype: byte
+    description: has_xp_continuous
+    mysql:datatype: TINYINT
+  - name: has_xp_sampled
+    "@id": "#matches_astro_only.has_xp_sampled"
+    datatype: byte
+    description: has_xp_sampled
+    mysql:datatype: TINYINT
+  - name: has_rvs
+    "@id": "#matches_astro_only.has_rvs"
+    datatype: byte
+    description: has_rvs
+    mysql:datatype: TINYINT
+  - name: has_epoch_photometry
+    "@id": "#matches_astro_only.has_epoch_photometry"
+    datatype: byte
+    description: has_epoch_photometry
+    mysql:datatype: TINYINT
+  - name: has_epoch_rv
+    "@id": "#matches_astro_only.has_epoch_rv"
+    datatype: byte
+    description: has_epoch_rv
+    mysql:datatype: TINYINT
+  - name: has_mcmc_gspphot
+    "@id": "#matches_astro_only.has_mcmc_gspphot"
+    datatype: byte
+    description: has_mcmc_gspphot
+    mysql:datatype: TINYINT
+  - name: has_mcmc_msc
+    "@id": "#matches_astro_only.has_mcmc_msc"
+    datatype: byte
+    description: has_mcmc_msc
+    mysql:datatype: TINYINT
+  - name: in_andromeda_survey
+    "@id": "#matches_astro_only.in_andromeda_survey"
+    datatype: byte
+    description: in_andromeda_survey
+    mysql:datatype: TINYINT
+  - name: classprob_dsc_combmod_quasar
+    "@id": "#matches_astro_only.classprob_dsc_combmod_quasar"
+    datatype: float
+    description: classprob_dsc_combmod_quasar
+    mysql:datatype: FLOAT
+  - name: classprob_dsc_combmod_galaxy
+    "@id": "#matches_astro_only.classprob_dsc_combmod_galaxy"
+    datatype: float
+    description: classprob_dsc_combmod_galaxy
+    mysql:datatype: FLOAT
+  - name: classprob_dsc_combmod_star
+    "@id": "#matches_astro_only.classprob_dsc_combmod_star"
+    datatype: float
+    description: classprob_dsc_combmod_star
+    mysql:datatype: FLOAT
+  - name: teff_gspphot
+    "@id": "#matches_astro_only.teff_gspphot"
+    datatype: float
+    description: teff_gspphot
+    mysql:datatype: FLOAT
+  - name: teff_gspphot_lower
+    "@id": "#matches_astro_only.teff_gspphot_lower"
+    datatype: float
+    description: teff_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: teff_gspphot_upper
+    "@id": "#matches_astro_only.teff_gspphot_upper"
+    datatype: float
+    description: teff_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: logg_gspphot
+    "@id": "#matches_astro_only.logg_gspphot"
+    datatype: float
+    description: logg_gspphot
+    mysql:datatype: FLOAT
+  - name: logg_gspphot_lower
+    "@id": "#matches_astro_only.logg_gspphot_lower"
+    datatype: float
+    description: logg_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: logg_gspphot_upper
+    "@id": "#matches_astro_only.logg_gspphot_upper"
+    datatype: float
+    description: logg_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: mh_gspphot
+    "@id": "#matches_astro_only.mh_gspphot"
+    datatype: float
+    description: mh_gspphot
+    mysql:datatype: FLOAT
+  - name: mh_gspphot_lower
+    "@id": "#matches_astro_only.mh_gspphot_lower"
+    datatype: float
+    description: mh_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: mh_gspphot_upper
+    "@id": "#matches_astro_only.mh_gspphot_upper"
+    datatype: float
+    description: mh_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: distance_gspphot
+    "@id": "#matches_astro_only.distance_gspphot"
+    datatype: float
+    description: distance_gspphot
+    mysql:datatype: FLOAT
+  - name: distance_gspphot_lower
+    "@id": "#matches_astro_only.distance_gspphot_lower"
+    datatype: float
+    description: distance_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: distance_gspphot_upper
+    "@id": "#matches_astro_only.distance_gspphot_upper"
+    datatype: float
+    description: distance_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: azero_gspphot
+    "@id": "#matches_astro_only.azero_gspphot"
+    datatype: float
+    description: azero_gspphot
+    mysql:datatype: FLOAT
+  - name: azero_gspphot_lower
+    "@id": "#matches_astro_only.azero_gspphot_lower"
+    datatype: float
+    description: azero_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: azero_gspphot_upper
+    "@id": "#matches_astro_only.azero_gspphot_upper"
+    datatype: float
+    description: azero_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: ag_gspphot
+    "@id": "#matches_astro_only.ag_gspphot"
+    datatype: float
+    description: ag_gspphot
+    mysql:datatype: FLOAT
+  - name: ag_gspphot_lower
+    "@id": "#matches_astro_only.ag_gspphot_lower"
+    datatype: float
+    description: ag_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: ag_gspphot_upper
+    "@id": "#matches_astro_only.ag_gspphot_upper"
+    datatype: float
+    description: ag_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot
+    "@id": "#matches_astro_only.ebpminrp_gspphot"
+    datatype: float
+    description: ebpminrp_gspphot
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot_lower
+    "@id": "#matches_astro_only.ebpminrp_gspphot_lower"
+    datatype: float
+    description: ebpminrp_gspphot_lower
+    mysql:datatype: FLOAT
+  - name: ebpminrp_gspphot_upper
+    "@id": "#matches_astro_only.ebpminrp_gspphot_upper"
+    datatype: float
+    description: ebpminrp_gspphot_upper
+    mysql:datatype: FLOAT
+  - name: libname_gspphot
+    "@id": "#matches_astro_only.libname_gspphot"
+    datatype: string
+    description: libname_gspphot
+    length: 16
+    mysql:datatype: VARCHAR(16)
+  - name: cx
+    "@id": "#matches_astro_only.cx"
+    datatype: double
+    description: cx_
+    mysql:datatype: DOUBLE
+  - name: cy
+    "@id": "#matches_astro_only.cy"
+    datatype: double
+    description: cy_
+    mysql:datatype: DOUBLE
+  - name: cz
+    "@id": "#matches_astro_only.cz"
+    datatype: double
+    description: cz_
+    mysql:datatype: DOUBLE
+  - name: htmID
+    "@id": "#matches_astro_only.htmID"
+    datatype: long
+    description: htmID
+    mysql:datatype: BIGINT
+  - name: tra
+    "@id": "#matches_astro_only.tra"
+    datatype: double
+    description: tra
+    mysql:datatype: DOUBLE
+  - name: tdec
+    "@id": "#matches_astro_only.tdec"
+    datatype: double
+    description: tdec
+    mysql:datatype: DOUBLE
+  - name: err_maj
+    "@id": "#matches_astro_only.err_maj"
+    datatype: float
+    description: err_maj
+    mysql:datatype: FLOAT
+  - name: err_min
+    "@id": "#matches_astro_only.err_min"
+    datatype: float
+    description: err_min
+    mysql:datatype: FLOAT
+  - name: err_ang
+    "@id": "#matches_astro_only.err_ang"
+    datatype: short
+    description: err_ang
+    mysql:datatype: SMALLINT
+  - name: tdesignation
+    "@id": "#matches_astro_only.tdesignation"
+    datatype: string
+    description: tdesignation
+    length: 17
+    mysql:datatype: VARCHAR(17)
+  - name: j_m
+    "@id": "#matches_astro_only.j_m"
+    datatype: float
+    description: j_m
+    mysql:datatype: FLOAT
+  - name: j_cmsig
+    "@id": "#matches_astro_only.j_cmsig"
+    datatype: float
+    description: j_cmsig
+    mysql:datatype: FLOAT
+  - name: j_msigcom
+    "@id": "#matches_astro_only.j_msigcom"
+    datatype: float
+    description: j_msigcom
+    mysql:datatype: FLOAT
+  - name: j_snr
+    "@id": "#matches_astro_only.j_snr"
+    datatype: float
+    description: j_snr
+    mysql:datatype: FLOAT
+  - name: h_m
+    "@id": "#matches_astro_only.h_m"
+    datatype: float
+    description: h_m
+    mysql:datatype: FLOAT
+  - name: h_cmsig
+    "@id": "#matches_astro_only.h_cmsig"
+    datatype: float
+    description: h_cmsig
+    mysql:datatype: FLOAT
+  - name: h_msigcom
+    "@id": "#matches_astro_only.h_msigcom"
+    datatype: float
+    description: h_msigcom
+    mysql:datatype: FLOAT
+  - name: h_snr
+    "@id": "#matches_astro_only.h_snr"
+    datatype: float
+    description: h_snr
+    mysql:datatype: FLOAT
+  - name: k_m
+    "@id": "#matches_astro_only.k_m"
+    datatype: float
+    description: k_m
+    mysql:datatype: FLOAT
+  - name: k_cmsig
+    "@id": "#matches_astro_only.k_cmsig"
+    datatype: float
+    description: k_cmsig
+    mysql:datatype: FLOAT
+  - name: k_msigcom
+    "@id": "#matches_astro_only.k_msigcom"
+    datatype: float
+    description: k_msigcom
+    mysql:datatype: FLOAT
+  - name: k_snr
+    "@id": "#matches_astro_only.k_snr"
+    datatype: float
+    description: k_snr
+    mysql:datatype: FLOAT
+  - name: ph_qual
+    "@id": "#matches_astro_only.ph_qual"
+    datatype: string
+    description: ph_qual
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: rd_flg
+    "@id": "#matches_astro_only.rd_flg"
+    datatype: string
+    description: rd_flg
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: bl_flg
+    "@id": "#matches_astro_only.bl_flg"
+    datatype: string
+    description: bl_flg
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: cc_flg
+    "@id": "#matches_astro_only.cc_flg"
+    datatype: string
+    description: cc_flg
+    length: 3
+    mysql:datatype: VARCHAR(3)
+  - name: ndet
+    "@id": "#matches_astro_only.ndet"
+    datatype: string
+    description: ndet
+    length: 6
+    mysql:datatype: VARCHAR(6)
+  - name: prox
+    "@id": "#matches_astro_only.prox"
+    datatype: float
+    description: prox
+    mysql:datatype: FLOAT
+  - name: pxpa
+    "@id": "#matches_astro_only.pxpa"
+    datatype: short
+    description: pxpa
+    mysql:datatype: SMALLINT
+  - name: pxcntr
+    "@id": "#matches_astro_only.pxcntr"
+    datatype: int
+    description: pxcntr
+    mysql:datatype: INT
+  - name: gal_contam
+    "@id": "#matches_astro_only.gal_contam"
+    datatype: short
+    description: gal_contam
+    mysql:datatype: SMALLINT
+  - name: mp_flg
+    "@id": "#matches_astro_only.mp_flg"
+    datatype: short
+    description: mp_flg
+    mysql:datatype: SMALLINT
+  - name: pts_key
+    "@id": "#matches_astro_only.pts_key"
+    datatype: int
+    description: pts_key
+    mysql:datatype: INT
+  - name: hemis
+    "@id": "#matches_astro_only.hemis"
+    datatype: string
+    description: hemis
+    length: 1
+    mysql:datatype: VARCHAR(1)
+  - name: tdate
+    "@id": "#matches_astro_only.tdate"
+    datatype: timestamp
+    description: tdate
+    mysql:datatype: DATETIME
+  - name: scan
+    "@id": "#matches_astro_only.scan"
+    datatype: short
+    description: scan
+    mysql:datatype: SMALLINT
+  - name: glon
+    "@id": "#matches_astro_only.glon"
+    datatype: float
+    description: glon
+    mysql:datatype: FLOAT
+  - name: glat
+    "@id": "#matches_astro_only.glat"
+    datatype: float
+    description: glat
+    mysql:datatype: FLOAT
+  - name: x_scan
+    "@id": "#matches_astro_only.x_scan"
+    datatype: float
+    description: x_scan
+    mysql:datatype: FLOAT
+  - name: jdate
+    "@id": "#matches_astro_only.jdate"
+    datatype: double
+    description: jdate
+    mysql:datatype: DOUBLE
+  - name: j_psfchi
+    "@id": "#matches_astro_only.j_psfchi"
+    datatype: float
+    description: j_psfchi
+    mysql:datatype: FLOAT
+  - name: h_psfchi
+    "@id": "#matches_astro_only.h_psfchi"
+    datatype: float
+    description: h_psfchi
+    mysql:datatype: FLOAT
+  - name: k_psfchi
+    "@id": "#matches_astro_only.k_psfchi"
+    datatype: float
+    description: k_psfchi
+    mysql:datatype: FLOAT
+  - name: j_m_stdap
+    "@id": "#matches_astro_only.j_m_stdap"
+    datatype: float
+    description: j_m_stdap
+    mysql:datatype: FLOAT
+  - name: j_msig_stdap
+    "@id": "#matches_astro_only.j_msig_stdap"
+    datatype: float
+    description: j_msig_stdap
+    mysql:datatype: FLOAT
+  - name: h_m_stdap
+    "@id": "#matches_astro_only.h_m_stdap"
+    datatype: float
+    description: h_m_stdap
+    mysql:datatype: FLOAT
+  - name: h_msig_stdap
+    "@id": "#matches_astro_only.h_msig_stdap"
+    datatype: float
+    description: h_msig_stdap
+    mysql:datatype: FLOAT
+  - name: k_m_stdap
+    "@id": "#matches_astro_only.k_m_stdap"
+    datatype: float
+    description: k_m_stdap
+    mysql:datatype: FLOAT
+  - name: k_msig_stdap
+    "@id": "#matches_astro_only.k_msig_stdap"
+    datatype: float
+    description: k_msig_stdap
+    mysql:datatype: FLOAT
+  - name: dist_edge_ns
+    "@id": "#matches_astro_only.dist_edge_ns"
+    datatype: int
+    description: dist_edge_ns
+    mysql:datatype: INT
+  - name: dist_edge_ew
+    "@id": "#matches_astro_only.dist_edge_ew"
+    datatype: int
+    description: dist_edge_ew
+    mysql:datatype: INT
+  - name: dist_edge_flg
+    "@id": "#matches_astro_only.dist_edge_flg"
+    datatype: string
+    description: dist_edge_flg
+    length: 2
+    mysql:datatype: VARCHAR(2)
+  - name: dup_src
+    "@id": "#matches_astro_only.dup_src"
+    datatype: short
+    description: dup_src
+    mysql:datatype: SMALLINT
+  - name: use_src
+    "@id": "#matches_astro_only.use_src"
+    datatype: short
+    description: use_src
+    mysql:datatype: SMALLINT
+  - name: a
+    "@id": "#matches_astro_only.a"
+    datatype: string
+    description: a__
+    length: 1
+    mysql:datatype: VARCHAR(1)
+  - name: dist_opt
+    "@id": "#matches_astro_only.dist_opt"
+    datatype: float
+    description: dist_opt
+    mysql:datatype: FLOAT
+  - name: phi_opt
+    "@id": "#matches_astro_only.phi_opt"
+    datatype: short
+    description: phi_opt
+    mysql:datatype: SMALLINT
+  - name: b_m_opt
+    "@id": "#matches_astro_only.b_m_opt"
+    datatype: float
+    description: b_m_opt
+    mysql:datatype: FLOAT
+  - name: vr_m_opt
+    "@id": "#matches_astro_only.vr_m_opt"
+    datatype: float
+    description: vr_m_opt
+    mysql:datatype: FLOAT
+  - name: nopt_mchs
+    "@id": "#matches_astro_only.nopt_mchs"
+    datatype: short
+    description: nopt_mchs
+    mysql:datatype: SMALLINT
+  - name: ext_key
+    "@id": "#matches_astro_only.ext_key"
+    datatype: int
+    description: ext_key
+    mysql:datatype: INT
+  - name: scan_key
+    "@id": "#matches_astro_only.scan_key"
+    datatype: int
+    description: scan_key
+    mysql:datatype: INT
+  - name: coadd_key
+    "@id": "#matches_astro_only.coadd_key"
+    datatype: int
+    description: coadd_key
+    mysql:datatype: INT
+  - name: coadd
+    "@id": "#matches_astro_only.coadd"
+    datatype: short
+    description: coadd
+    mysql:datatype: SMALLINT
+  - name: chunkId
+    "@id": "#matches_astro_only.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#matches_astro_only.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
+- name: gaia_nonmatches_astro_photo
+  "@id": "#gaia_nonmatches_astro_photo"
+  description: Objects in Gaia DR3 with no counterpart in the 2MASS catalogue, with derived columns such as match probability and simulated flux contamination.
+  columns:
+  - name: gaia_source_id
+    "@id": "#gaia_nonmatches_astro_photo.gaia_source_id"
+    datatype: long
+    description: The Gaia DR3 source ID.
+    mysql:datatype: BIGINT
+  - name: gaia_designation
+    "@id": "#gaia_nonmatches_astro_photo.gaia_designation"
+    datatype: string
+    description: The Gaia DR3 object designation.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: gaia_ra
+    "@id": "#gaia_nonmatches_astro_photo.gaia_ra"
+    datatype: double
+    description: Right Ascension of the Gaia DR3 source.
+    mysql:datatype: DOUBLE
+  - name: gaia_dec
+    "@id": "#gaia_nonmatches_astro_photo.gaia_dec"
+    datatype: double
+    description: The Gaia DR3 declination.
+    mysql:datatype: DOUBLE
+  - name: bp
+    "@id": "#gaia_nonmatches_astro_photo.bp"
+    datatype: float
+    description: The BP magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: g
+    "@id": "#gaia_nonmatches_astro_photo.g"
+    datatype: float
+    description: The G magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: rp
+    "@id": "#gaia_nonmatches_astro_photo.rp"
+    datatype: float
+    description: The RP magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: match_p
+    "@id": "#gaia_nonmatches_astro_photo.match_p"
+    datatype: double
+    description: Overall probability that the Gaia DR3 source does not have a corresponding 2MASS detection, as given by equation 26 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_separation
+    "@id": "#gaia_nonmatches_astro_photo.nnm_separation"
+    datatype: double
+    description: On-sky distance to the nearest non-matched 2MASS object, in arcseconds.
+    mysql:datatype: DOUBLE
+  - name: nnm_eta
+    "@id": "#gaia_nonmatches_astro_photo.nnm_eta"
+    datatype: double
+    description: Photometric logarithmic likelihood ratio of the Gaia DR3 object and the nearest non-matched 2MASS source, as described by equation 37 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_xi
+    "@id": "#gaia_nonmatches_astro_photo.nnm_xi"
+    datatype: double
+    description: Astrometric logarithmic likelihood ratio of the Gaia DR3 object and the nearest non-matched 2MASS source, as described by equation 38 of Wilson & Naylor (2018a)
+    mysql:datatype: DOUBLE
+  - name: gaia_avg_cont
+    "@id": "#gaia_nonmatches_astro_photo.gaia_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated Gaia PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source.
+    mysql:datatype: DOUBLE
+  - name: chunkId
+    "@id": "#gaia_nonmatches_astro_photo.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#gaia_nonmatches_astro_photo.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
+- name: gaia_nonmatches_astro_only
+  "@id": "#gaia_nonmatches_astro_only"
+  description: Objects in Gaia DR3 with no counterpart in the 2MASS catalogue, with derived columns such as match probability and simulated flux contamination.
+  columns:
+  - name: gaia_source_id
+    "@id": "#gaia_nonmatches_astro_only.gaia_source_id"
+    datatype: long
+    description: The Gaia DR3 source ID.
+    mysql:datatype: BIGINT
+  - name: gaia_designation
+    "@id": "#gaia_nonmatches_astro_only.gaia_designation"
+    datatype: string
+    description: The Gaia DR3 object designation.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: gaia_ra
+    "@id": "#gaia_nonmatches_astro_only.gaia_ra"
+    datatype: double
+    description: Right Ascension of the Gaia DR3 source.
+    mysql:datatype: DOUBLE
+  - name: gaia_dec
+    "@id": "#gaia_nonmatches_astro_only.gaia_dec"
+    datatype: double
+    description: The Gaia DR3 declination.
+    mysql:datatype: DOUBLE
+  - name: bp
+    "@id": "#gaia_nonmatches_astro_only.bp"
+    datatype: float
+    description: The BP magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: g
+    "@id": "#gaia_nonmatches_astro_only.g"
+    datatype: float
+    description: The G magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: rp
+    "@id": "#gaia_nonmatches_astro_only.rp"
+    datatype: float
+    description: The RP magnitude, from Gaia DR3.
+    mysql:datatype: FLOAT
+  - name: match_p
+    "@id": "#gaia_nonmatches_astro_only.match_p"
+    datatype: double
+    description: Overall probability that the Gaia DR3 source does not have a corresponding 2MASS detection, as given by equation 26 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_separation
+    "@id": "#gaia_nonmatches_astro_only.nnm_separation"
+    datatype: double
+    description: On-sky distance to the nearest non-matched 2MASS object, in arcseconds.
+    mysql:datatype: DOUBLE
+  - name: nnm_eta
+    "@id": "#gaia_nonmatches_astro_only.nnm_eta"
+    datatype: double
+    description: Photometric logarithmic likelihood ratio of the Gaia DR3 object and the nearest non-matched 2MASS source, as described by equation 37 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_xi
+    "@id": "#gaia_nonmatches_astro_only.nnm_xi"
+    datatype: double
+    description: Astrometric logarithmic likelihood ratio of the Gaia DR3 object and the nearest non-matched 2MASS source, as described by equation 38 of Wilson & Naylor (2018a)
+    mysql:datatype: DOUBLE
+  - name: gaia_avg_cont
+    "@id": "#gaia_nonmatches_astro_only.gaia_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated Gaia PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source.
+    mysql:datatype: DOUBLE
+  - name: chunkId
+    "@id": "#gaia_nonmatches_astro_only.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#gaia_nonmatches_astro_only.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
+- name: twomass_nonmatches_astro_photo
+  "@id": "#twomass_nonmatches_astro_photo"
+  description: Objects in 2MASS with no counterpart in the Gaia DR3 catalogue, with derived columns such as match probability and simulated flux contamination.
+  columns:
+  - name: twomass_name
+    "@id": "#twomass_nonmatches_astro_photo.twomass_name"
+    datatype: string
+    description: The object identifier from the 2MASS catalogue, either the PSC or the XSC.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: twomass_ra
+    "@id": "#twomass_nonmatches_astro_photo.twomass_ra"
+    datatype: double
+    description: Right Ascension of the object as quoted by the 2MASS catalogue.
+    mysql:datatype: DOUBLE
+  - name: twomass_dec
+    "@id": "#twomass_nonmatches_astro_photo.twomass_dec"
+    datatype: double
+    description: 2MASS Declination.
+    mysql:datatype: DOUBLE
+  - name: j
+    "@id": "#twomass_nonmatches_astro_photo.j"
+    datatype: double
+    description: J magnitude from 2MASS.
+    mysql:datatype: DOUBLE
+  - name: h
+    "@id": "#twomass_nonmatches_astro_photo.h"
+    datatype: double
+    description: H magnitude from 2MASS.
+    mysql:datatype: DOUBLE
+  - name: k
+    "@id": "#twomass_nonmatches_astro_photo.k"
+    datatype: double
+    description: K magnitude from 2MASS.
+    mysql:datatype: DOUBLE
+  - name: twomass_key
+    "@id": "#twomass_nonmatches_astro_photo.twomass_key"
+    datatype: long
+    description: The pts_key column from the 2MASS PSC catalogue, or minus the ext_key column from the 2MASS XSC catalogue.
+    mysql:datatype: BIGINT
+  - name: match_p
+    "@id": "#twomass_nonmatches_astro_photo.match_p"
+    datatype: double
+    description: Overall probability that the 2MASS source does not have a corresponding Gaia DR3 detection, as given by equation 26 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_separation
+    "@id": "#twomass_nonmatches_astro_photo.nnm_separation"
+    datatype: double
+    description: On-sky distance to the nearest non-matched Gaia object, in arcseconds
+    mysql:datatype: DOUBLE
+  - name: nnm_eta
+    "@id": "#twomass_nonmatches_astro_photo.nnm_eta"
+    datatype: double
+    description: Photometric logarithmic likelihood ratio of the 2MASS object and the nearest non-matched Gaia source, as described by equation 37 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_xi
+    "@id": "#twomass_nonmatches_astro_photo.nnm_xi"
+    datatype: double
+    description: Astrometric logarithmic likelihood ratio of the 2MASS object and the nearest non-matched Gaia source, as described by equation 38 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: twomass_avg_cont
+    "@id": "#twomass_nonmatches_astro_photo.twomass_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated 2MASS PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source
+    mysql:datatype: DOUBLE
+  - name: chunkId
+    "@id": "#twomass_nonmatches_astro_photo.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#twomass_nonmatches_astro_photo.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
+- name: twomass_nonmatches_astro_only
+  "@id": "#twomass_nonmatches_astro_only"
+  description: Objects in 2MASS with no counterpart in the Gaia DR3 catalogue, with derived columns such as match probability and simulated flux contamination.
+  columns:
+  - name: twomass_name
+    "@id": "#twomass_nonmatches_astro_only.twomass_name"
+    datatype: string
+    description: The object identifier from the 2MASS catalogue, either the PSC or the XSC.
+    length: 32
+    mysql:datatype: VARCHAR(32)
+  - name: twomass_ra
+    "@id": "#twomass_nonmatches_astro_only.twomass_ra"
+    datatype: double
+    description: Right Ascension of the object as quoted by the 2MASS catalogue.
+    mysql:datatype: DOUBLE
+  - name: twomass_dec
+    "@id": "#twomass_nonmatches_astro_only.twomass_dec"
+    datatype: double
+    description: 2MASS Declination.
+    mysql:datatype: DOUBLE
+  - name: j
+    "@id": "#twomass_nonmatches_astro_only.j"
+    datatype: double
+    description: J magnitude from 2MASS.
+    mysql:datatype: DOUBLE
+  - name: h
+    "@id": "#twomass_nonmatches_astro_only.h"
+    datatype: double
+    description: H magnitude from 2MASS.
+    mysql:datatype: DOUBLE
+  - name: k
+    "@id": "#twomass_nonmatches_astro_only.k"
+    datatype: double
+    description: K magnitude from 2MASS.
+    mysql:datatype: DOUBLE
+  - name: twomass_key
+    "@id": "#twomass_nonmatches_astro_only.twomass_key"
+    datatype: long
+    description: The pts_key column from the 2MASS PSC catalogue, or minus the ext_key column from the 2MASS XSC catalogue.
+    mysql:datatype: BIGINT
+  - name: match_p
+    "@id": "#twomass_nonmatches_astro_only.match_p"
+    datatype: double
+    description: Overall probability that the 2MASS source does not have a corresponding Gaia DR3 detection, as given by equation 26 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_separation
+    "@id": "#twomass_nonmatches_astro_only.nnm_separation"
+    datatype: double
+    description: On-sky distance to the nearest non-matched Gaia object, in arcseconds
+    mysql:datatype: DOUBLE
+  - name: nnm_eta
+    "@id": "#twomass_nonmatches_astro_only.nnm_eta"
+    datatype: double
+    description: Photometric logarithmic likelihood ratio of the 2MASS object and the nearest non-matched Gaia source, as described by equation 37 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: nnm_xi
+    "@id": "#twomass_nonmatches_astro_only.nnm_xi"
+    datatype: double
+    description: Astrometric logarithmic likelihood ratio of the 2MASS object and the nearest non-matched Gaia source, as described by equation 38 of Wilson & Naylor (2018a).
+    mysql:datatype: DOUBLE
+  - name: twomass_avg_cont
+    "@id": "#twomass_nonmatches_astro_only.twomass_avg_cont"
+    datatype: double
+    description: Mean contaminating relative flux within simulated 2MASS PSFs perturbation component of the Astrometric Uncertainty Function at the local density and magnitude of the source
+    mysql:datatype: DOUBLE
+  - name: chunkId
+    "@id": "#twomass_nonmatches_astro_only.chunkId"
+    datatype: int
+    description: chunkId
+    mysql:datatype: INT
+  - name: subChunkId
+    "@id": "#twomass_nonmatches_astro_only.subChunkId"
+    datatype: int
+    description: subChunkId
+    mysql:datatype: INT
+- name: ngpv7_gaiaids
+  "@id": "#ngpv7_gaiaids"
+  description: list of IDs for verification tests
+  columns:
+  - name: source_id
+    "@id": "#ngpv7_gaiaids.source_id"
+    datatype: long
+    description: source_id
+    mysql:datatype: BIGINT
+- name: as1_gaiaids
+  "@id": "#as1_gaiaids"
+  description: AS1 list of IDs for verification tests
+  columns:
+  - name: source_id
+    "@id": "#as1_gaiaids.source_id"
+    datatype: long
+    description: source_id
+    mysql:datatype: BIGINT
